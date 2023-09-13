@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-<title>Proba</title>
-<body>
-    <h1>
-        Hola Mundo
-    </h1>
-    <p>
-       Que tal todo?
-    </p>
-</body>
+  <title>Proba</title>
+
+  <body>
+    <script>
+      let num1 = 2;
+      let num2 = 3;
+      let suma = num1 + num2;
+      console.log(suma);
+      document.write(suma + "<br>") ;
+      let nome = prompt("Introduce o nome");
+      let apelido = prompt("Introduce os apelidos");
+      let edad = prompt("Introduce a idade");
+      /*document.write("<strong>"+"Nome: " + nome + "<br>" + "</strong>");
+      document.write("<strong>"+"Apelidos: " + apelido + "<br>" + "</strong>");
+      document.write("<strong>"+"Idade: " + edad + "<br>" +"</strong>");*/
+      document.write(`Nome: ${ '"'+nome + '"'} <br>`, `Apelido: ${'"'+apelido+'"'}<br>`,`Idade: ${edad}<br>`) ;
+    </script>
+    <h1>Hola Mundo</h1>
+    <p>Que tal todo?</p>
+  </body>
 </html>
