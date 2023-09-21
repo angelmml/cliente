@@ -7,7 +7,77 @@
     </head>
     <body>
         <script>
-            let triangulo
+            let figura = parseInt(prompt("Introduce o numero correspondente a figura xeométrica da que queres calcular a súa área. \n- 1 para Tríangulo \n- 2 para Cadrado \n- 3 para Rectángulo \n- 4 para Círculo"));
+            let figura2 = parseInt(prompt("Introduce o numero correspondente a figura xeométrica da que queres calcular a súa área. \n- 1 para Tríangulo \n- 2 para Cadrado \n- 3 para Rectángulo \n- 4 para Círculo"));
+            switch (figura){
+                case 1:
+                let baseTri = parseFloat(prompt("Introduce a base do triángulo: "));
+                let altTri = parseFloat(prompt("Introduce a altura do triángulo: "));
+
+                let areaTri = (baseTri * altTri) / 2;
+
+                document.write("O triángulo ten unha área de : " + areaTri);
+                break;
+                case 2:
+                let ladoCua = parseFloat(prompt("Introduce o lado do cuadrado: "));
+                
+                let areaCua = ladoCua * ladoCua;
+
+                document.write("O cadrado ten unha área de : " + areaCua);
+                break;
+
+                case 3:
+                let anchRec = parseFloat(prompt("Introduce a anchura do rectángulo: "));
+
+                let areaRec = longRec * anchRec;
+
+                document.write("O rectángulo ten unha área de : ");
+                break;
+                case 4:
+                let radCirc = parseFloat(prompt("Introduce o radio do círculo: "));
+
+                let areaCirc = 3.141592 * radCirc * radCirc;
+
+                document.write("A área do círculo é: " + areaCirc);
+                break;
+
+            }
+
+           
+
+            switch (figura2){
+                case 1:
+                let baseTri = parseFloat(prompt("Introduce a base do triángulo: "));
+                let altTri = parseFloat(prompt("Introduce a altura do triángulo: "));
+
+                let areaTri = (baseTri * altTri) / 2;
+
+                document.write("O triángulo ten unha área de : " + areaTri);
+                break;
+                case 2:
+                let ladoCua = parseFloat(prompt("Introduce o lado do cuadrado: "));
+                
+                let areaCua = ladoCua * ladoCua;
+
+                document.write("O cadrado ten unha área de : " + areaCua);
+                break;
+
+                case 3:
+                let anchRec = parseFloat(prompt("Introduce a anchura do rectángulo: "));
+
+                let areaRec = longRec * anchRec;
+
+                document.write("O rectángulo ten unha área de : ");
+                break;
+                case 4:
+                let radCirc = parseFloat(prompt("Introduce o radio do círculo: "));
+
+                let areaCirc = 3.141592 * radCirc * radCirc;
+
+                document.write("A área do círculo é: " + areaCirc);
+                break;
+
+            }
         </script>
     </body>
 </html>
