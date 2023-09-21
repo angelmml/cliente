@@ -9,9 +9,13 @@
         <script>
             let ano = parseInt(prompt("Introduce un ano: "));
 
-            if (ano %4 == 0 && ano %2 != 0){
-                document.write("No ano " + ano  + " hai olimpiadas e Campionatos de Europa.");
-            }else
+            if (ano %4 == 0 ){
+                document.write("No ano " + ano  + " hai olimpiadas.");
+            }else if(ano %2 == 0){
+                document.write("No ano " + ano + " hai europeo.")
+            }else{
+                document.write("No ano " + ano + " hai mundial.")
+            }
         </script>
     </body>
 </html>
