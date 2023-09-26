@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        Exercicio 5<br>
+    </head>
+    <body>
+        <script>
+           let cadena = "A saia da Carolina ten un lagarto pintado";
+           let cadenaSinEsp = cadena.replace(/^\s+|\s+$/g,"");
+           let palabras = cadenaSinEsp.split(" ");
+           let numPalabras = palabras.length;
+
+           document.write(`O número de palabras é na frase "${cadena}" é de : ${numPalabras}`);
+        </script>
+    </body>
+</html>
