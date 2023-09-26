@@ -34,7 +34,7 @@
             */
 
 
-            let prezos = [69.99,12.49,35.20,99.90];
+           // let prezos = [69.99,12.49,35.20,99.90];
             
             /* 
             for (let i=0;i<prezos.length;i ++){
@@ -60,10 +60,15 @@
                 ['Rodolfo', 'Lewandowski', 'Costa']
             ]
 
+            var Salarios = [1500, 1600, 2050];          
+           
             for(let i=0; i<Empregados.length;i++){
+                document.write("<br><b> Nombre: </b>");
                 for(j=0;j<Empregados[i].length;j++){
-                    document.write(`Fila ${i} - Nome ${j}:`)
+                    document.write(` ${Empregados[i][j]}`);
                 }
+
+                document.write(`<br> <b>Salario:</b> ${Salarios[i]}`);
             }
 
         </script>
