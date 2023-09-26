@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+           Ejemplo Array
+        </title>
+    </head>
+    <body>
+        <script>
+            /*  Crear un array para cargar a seguinte táboa:
+            Nome Fruta ----- Prezo
+            Debes ter tres frutas na súa definición e pedir unha
+            nova fruta en tempo de execución do programa.
+            Finalmemnte, imprimir todas as frutas (usando for).*/
+            
+            /*
+            var Frutas = [
+                ['Kiwi','2.40'],
+                ['Mandarina','1.99'],
+                ['Melón','1.80']
+            ]
+
+            var nueva_fruta = prompt("Introduce o nome dunha nova froita");
+            var nuevo_precio = parseFloat(prompt("Introduce o prezo da nova froita"));
+
+            Frutas [3] = [nueva_fruta, nuevo_precio];
+
+            for (let i=0; i<Frutas.length;i++){
+                
+                    document.write("<p>Nombre: " + Frutas[i][0] + ", Precio: " + Frutas[i][1] + "</p>");
+                
+            }
+
+            */
+
+
+            let prezos = [69.99,12.49,35.20,99.90];
+            
+            /* 
+            for (let i=0;i<prezos.length;i ++){
+                document.write(`O prezo ${i} é  ${prezos[i]} .`);
+            }
+            */
+           /*
+            for (let i in prezos){
+                document.write(`O prezo ${i} é de ${prezos[i]} euros.`)
+            }
+            */
+            /*
+            for (let precio of prezos){
+                document.write(precio);
+            }
+            */
+
+            // Crear array bidimensional no que se vexan os nomes e apelidos de 3 empregados
+
+            var Empregados = [
+                ['Pedro','Lopez','Armas'],
+                ['Alfredo', 'Duro', 'Gomez'],
+                ['Rodolfo', 'Lewandowski', 'Costa']
+            ]
+
+            for(let i=0; i<Empregados.length;i++){
+                for(j=0;j<Empregados[i].length;j++){
+                    document.write(`Fila ${i} - Nome ${j}:`)
+                }
+            }
+
+        </script>
+    </body>
+</html>
