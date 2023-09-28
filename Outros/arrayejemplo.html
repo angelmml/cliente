@@ -54,7 +54,7 @@
 
             // Crear array bidimensional no que se vexan os nomes e apelidos de 3 empregados
 
-            var Empregados = [
+           /* var Empregados = [
                 ['Pedro','Lopez','Armas'],
                 ['Alfredo', 'Duro', 'Gomez'],
                 ['Rodolfo', 'Lewandowski', 'Costa']
@@ -69,6 +69,50 @@
                 }
 
                 document.write(`<br> <b>Salario:</b> ${Salarios[i]}`);
+            }*/
+
+
+            // Slice mirar pa examen ??
+            let original = [4,8,15,16,23];
+            let copia = original;
+            copia [0]= 3;
+            copia = original.slice();
+            console.log(original);
+            console.log(copia);
+
+            // DADO UN ARRAY QUE SE CARGARÁ CON 5 ELEMENTOS QUE SE INTRODUCEN POR PANTALLA:
+            // INDICAR CUANTAS VECES APARECE UN ELEMENTO QUE TAMBIEN SE PIDE POR PANTALLA.
+            // EJEMPLO DE USO: [1,1,4,3,4]
+            // ELEMENTO BUSCAR: 1
+            // RESULTADO: 2
+
+            /*let array = [] * 5;
+
+            console.log("Introduce los elemntos del array separados por comas:");
+            let input = window.prompt("");
+
+            array = input.split(",");
+
+            let aBuscar = window.prompt("Introduce el numero a buscar:");
+
+            for (let i = 0; i < array.length; i++){
+                if (array[i] === aBuscar){
+                    count++;
+                }
+            }
+            
+            console.log("El elemento " + aBuscar + " aparece " + count + " veces.");
+
+            */
+              
+            
+            //elementos e o array
+            var contador = 0;
+            var indice = elementos.indexof(elementosBuscado);
+
+            while(indice !== -1){
+                contador ++;
+                indice = elementos.indexof(elementosBuscado)
             }
 
         </script>
