@@ -73,12 +73,12 @@
 
 
             // Slice mirar pa examen ??
-            let original = [4,8,15,16,23];
+            /*let original = [4,8,15,16,23];
             let copia = original;
             copia [0]= 3;
             copia = original.slice();
             console.log(original);
-            console.log(copia);
+            console.log(copia);*/
 
             // DADO UN ARRAY QUE SE CARGARÁ CON 5 ELEMENTOS QUE SE INTRODUCEN POR PANTALLA:
             // INDICAR CUANTAS VECES APARECE UN ELEMENTO QUE TAMBIEN SE PIDE POR PANTALLA.
@@ -107,14 +107,56 @@
               
             
             //elementos e o array
-            var contador = 0;
+           /* var contador = 0;
             var indice = elementos.indexof(elementosBuscado);
 
             while(indice !== -1){
                 contador ++;
                 indice = elementos.indexof(elementosBuscado)
             }
+           
 
+          
+
+/*
+            let nomes = [];
+
+            for (let i = 0; i < 5; i++){
+                let nome = prompt("Introduce un nome: ");
+                nomes.push(nome);
+            }
+
+            nomes.reverse();
+
+            console.log(nomes);
+*/
+  //Pedir 5 nombres para un array y ordenarlos con un array.sort
+
+
+          /* var arrayNombres=['Pepe','Paco','Alfred','Charles','Augusto'];
+
+           arrayNombres.sort();
+
+            var resultado = arrayNombres.reverse();
+            document.write(resultado);
+          */
+
+
+
+          // Generar un numero aleatorio 100 veces
+
+          //llenar un array con un numero aleatorio 100 veces
+
+
+          var numRandom = [];
+
+          for(let i = 0;  i < 100 ; i++ ){
+            let num = (Math.random() * 100 | 0);
+            numRandom.push(num);
+            
+            
+          }
+          document.write(numRandom);
         </script>
     </body>
 </html>
