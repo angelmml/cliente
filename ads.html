@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+// Definir un arreglo con los nombres de los equipos de la liga española
+const equipos = ['Real Madrid', 'FC Barcelona', 'Atlético de Madrid', 'Sevilla FC', 'Real Betis', 'Valencia CF', 'Villarreal CF', 'Real Sociedad', 'Athletic Club', 'RC Celta'];
+
+// Definir un arreglo con tus apuestas (nombres de los equipos o notación "1", "x", "2")
+const apuestas = ['Real Madrid', 'FC Barcelona', '1', 'Sevilla FC', '2', 'Valencia CF', 'Villarreal CF', 'Real Sociedad', 'Athletic Club', 'RC Celta'];
+
+// Definir los resultados reales de los partidos (puedes cambiarlos según los resultados reales)
+const resultadosReales = ['Real Madrid', 'FC Barcelona', '1', 'Sevilla FC', 'x', 'Valencia CF', 'Villarreal CF', 'Real Sociedad', 'Athletic Club', 'RC Celta'];
+
+// Inicializar una variable para llevar un conteo de aciertos
+let aciertos = 0;
+
+// Iterar sobre las apuestas y los resultados reales
+for (let i = 0; i < apuestas.length; i++) {
+  // Comprobar si la apuesta es válida ("1", "x", "2" o si el equipo está en la lista de equipos)
+  if (apuestas[i] === "1" || apuestas[i] === "x" || apuestas[i] === "2" || equipos.includes(apuestas[i])) {
+    // Comprobar si la apuesta es correcta
+    if (apuestas[i] === resultadosReales[i]) {
+      aciertos++;
+    }
+  }
+}
+
+// Mostrar el número de aciertos
+console.log(`Número de aciertos: ${aciertos}`);
+
+        </script>
+    </body>
+</html>
