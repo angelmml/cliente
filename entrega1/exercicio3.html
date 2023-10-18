@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <br />
+  </head>
+  <body>
+    <script>
+      var mapaFroitas = new Map();
+      mapaFroitas.set("Amorodos", 3);
+      mapaFroitas.set("Kivis", 5);
+      mapaFroitas.set("Mazá", 5);
+      mapaFroitas.set("Pera", 5);
+      mapaFroitas.set("Uvas", 5);
+      mapaFroitas.set("Caqui", 5);
+      mapaFroitas.set("Moras", 5);
+      mapaFroitas.set("Mandarina", 5);
+      mapaFroitas.set("Limón", 5);
+      mapaFroitas.set("Pexego", 5);
+
+      var precioTotal = 0;
+
+      var frutaElegida = prompt("Escribe a froita queres elexir: Amorodos, Kivis, Mazá, Pera, Uvas, Caqui, Moras, Mandarina, Limón ou Pexego");
+
+   
+
+      switch (frutaElegida) {
+        case "Amorodos":
+          precioTotal += mapaFroitas.get("Amorodos");
+          break;
+        case "Kivis":
+          precioTotal += mapaFroitas.get("Kivis");
+          break;
+        case "Mazá":
+          precioTotal += mapaFroitas.get("Mazá");
+          break;
+        case "Pera":
+          precioTotal += mapaFroitas.get("Pera");
+          break;
+        case "Uvas":
+          precioTotal += mapaFroitas.get("Uvas");
+          break;
+        case "Caqui":
+          precioTotal += mapaFroitas.get("Caqui");
+          break;
+        case "Moras":
+          precioTotal += mapaFroitas.get("Moras");
+          break;
+        case "Mandarina":
+          precioTotal += mapaFroitas.get("Mandarina");
+          break;
+        case "Limón":
+          precioTotal += mapaFroitas.get("Limón");
+          break;
+        case "Pexego":
+          precioTotal += mapaFroitas.get("Pexego");
+          break;
+        default:
+          console.log("La fruta elegida no existe");
+          break;
+      }
+
+      var ive = 0.16;
+      var precioIve = precioTotal * (1 + ive);
+      console.log("Precio total: " + precioTotal);
+      console.log("Precio con IVA: " + precioIve);
+    </script>
+  </body>
+</html>

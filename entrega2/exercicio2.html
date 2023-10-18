@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <br />
+  </head>
+  <body>
+    <script>
+      let cadena = prompt("Introduce unha frase:");
+      var resultado = "";
+      for (var i = 0; i < cadena.length; i++) {
+        if (cadena[i] === " ") {
+          resultado += " ";
+        } else {
+          resultado += cadena[i].toUpperCase();
+        }
+      }
+      console.log(resultado);
+    </script>
+  </body>
+</html>

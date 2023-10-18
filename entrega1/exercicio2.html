@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <br>
+    </head>
+    <body>
+        <script>
+         var conxuntoNumeros = new Set();
+
+         while (conxuntoNumeros.size < 10){
+            var numerosAleatorios = Math.floor(Math.random()*100)+1;
+            conxuntoNumeros.add(numerosAleatorios);
+         }
+
+         var arrayNumeros = [];
+
+         for (var numero of conxuntoNumeros){
+            arrayNumeros.push(numero);
+         }
+
+         document.write(`Resultado: ${arrayNumeros}`)
+        </script>
+    </body>
+</html>
