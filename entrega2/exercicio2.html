@@ -6,14 +6,26 @@
   </head>
   <body>
     <script>
-      let cadena = prompt("Introduce unha frase:");
+      var cadena = prompt("Introduce unha frase:");
       var resultado = "";
+
+      var tenEspacio = true;
+
       for (var i = 0; i < cadena.length; i++) {
-        if (cadena[i] === " ") {
-          resultado += " ";
-        } else {
-          resultado += cadena[i].toUpperCase();
+        var letra =cadena[i];
+
+        if (letra == " "){
+          tenEspacio = true;
+        }else{
+          if (tenEspacio){
+            letra=letra.toUpperCase();
+          }else{
+            letra=letra.toLowerCase();
+          }
+
+          tenEspacio = false;
         }
+        resultado += letra;
       }
       console.log(resultado);
     </script>
