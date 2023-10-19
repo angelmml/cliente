@@ -6,20 +6,17 @@
   </head>
   <body>
     <script>
-      var texto = "Esta es una frase con vocales";
-
+      var texto = prompt("Escribe una frase:");
       var textoOculto = "";
-
       for (var i = 0; i < texto.length; i++) {
         var caracter = texto[i];
 
-        if (/[aeiouáéíóú]/.test(caracter)) {
+        if ("aeiouáéíóú".includes(caracter.toLowerCase())) {
           textoOculto += " ";
         } else {
           textoOculto += caracter;
         }
       }
-
       console.log(textoOculto);
     </script>
   </body>

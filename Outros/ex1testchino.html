@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      let numrandom = Math.floor(Math.random() * 100) + 1;
+
+      let acertos = 0;
+      let intentos = 0;
+      let sair = false;
+
+      while (!sair) {
+        let numUsuario = parseInt(
+          prompt(
+            "Introduce un número del 1 al 100 (o pulsa Cancelar para salir): "
+          )
+        );
+
+        if (isNaN(numUsuario)) {
+          // Cancelar
+          sair = true;
+        } else if (numUsuario < 1 || numUsuario > 100) {
+          alert("Por favor, introduce un número válido del 1 al 100.");
+        } else {
+          intentos++;
+
+          if (numUsuario == numrandom) {
+            document.write("¡Número correcto! ¡Enhorabuena!");
+            acertos++;
+            sair = true;
+          } else if (numUsuario < numrandom) {
+            alert("Fallo, el número que buscas es mayor.");
+          } else {
+            alert("Fallo, el número que buscas es menor.");
+          }
+        }
+      }
+
+      if (intentos > 0) {
+        let porcentajeAcertos = (acertos / intentos) * 100;
+        document.write(
+          "La tasa de aciertos es: " + porcentajeAcertos.toFixed(2) + "%"
+        );
+      } else {
+        document.write("No realizaste ningún intento.");
+      }
+    </script>
+  </body>
+</html>

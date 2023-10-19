@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+                  //Generar con math.random mil números. Comprobar con que frecuencia aparecen los numeros del 1 al 10.
+                  //Debe imprimir
+                  //1 aparece x veces
+                  //2 aparece y veces
+
+                
+                  //Creamos o mapa
+                  const numeros = new Map;
+
+                  //Inicializamos o numeros para que colla os valores de 1 a 10
+                  for (let i = 1; i<= 10; i++){
+                      numeros.set(i,0);
+                  }
+
+                  // Creamos o bucle que se repite 1000 veces e xera os numeros do 1 ao 10 de xeito aleatorio
+                  for (let i = 0; i < 1000; i++){
+                    const numero = Math.floor(Math.random() * 10) + 1;
+                      numeros.set(numero, numeros.get(numero)+ 1);
+
+                  }
+                  // Bucle que recorre o mapa e pinta o que lle pedimos.
+                  for (let [numero, frecuencia] of numeros) {
+                  console.log(`${numero} aparece ${frecuencia} veces`);
+                  }
+      
+
+        </script>
+  </body>
+</html>

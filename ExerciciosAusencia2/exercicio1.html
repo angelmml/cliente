@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicio 1</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Crea un algoritmo que reciba como argumento unha cadea 
+        de caracteres e devolva outra cadea con todas as vocales
+        e o número de veces que aparece cada unha na cadea
+        argumento. Procura usar prioritariamente os métodos 
+        do obxeto string. Exemplo: Introduzo "Hola soy Pepe"
+        deberá imprimir a:1, e:2, i:0, o:2, u:0
+        */
+
+      let texto = prompt("Introduce un texto:");
+
+      texto = texto.toLowerCase();
+
+      const vogais = "aeiou";
+      const contaletras = {};
+
+      for (let i = 0; i < texto.length; i++) {
+        const letra = texto[i];
+        if (!contaletras[letra]) {
+          contaletras[letra] = 1;
+        } else {
+          contaletras[letra]++;
+        }
+      }
+      console.log(contaletras);
+
+    </script>
+  </body>
+</html>

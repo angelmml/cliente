@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            ex2 repaso
+        </title>
+    </head>
+    <body>
+        <script>
+            /* 
+            Solicitar una cadena por teclado y convertir esa cadena donde todas las vocales pasen a ser la letra "x".*/
+
+            let cadena = (prompt("Introduce a cadena que queiras: "));
+            let buscaLetra = /[aeiouAEIOU]/g;
+            let cambiarLetra = "x";
+            let cadenaModificada = cadena.replace(buscaLetra, cambiarLetra);
+
+            document.write(cadenaModificada);
+
+        </script>
+    </body>
+</html>
