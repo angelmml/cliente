@@ -21,16 +21,16 @@
       const vogais = "aeiou";
       const contaletras = {};
 
-      for (let i = 0; i < texto.length; i++) {
-        const letra = texto[i];
-        if (!contaletras[letra]) {
-          contaletras[letra] = 1;
-        } else {
-          contaletras[letra]++;
+      for (let letra of texto) {
+        if (vogais.includes(letra)){
+          contaletras[letra] = (contaletras[letra] || 0) + 1;
         }
       }
-      console.log(contaletras);
 
+      for (letra of vogais){
+        console.log(`${letra}:${contaletras[letra] || 0}`);
+      }
+     
     </script>
   </body>
 </html>
