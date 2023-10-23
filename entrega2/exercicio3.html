@@ -6,17 +6,26 @@
   </head>
   <body>
     <script>
+      //Pedimos a cadena
       var texto = prompt("Escribe una frase:");
+      //Iniciamos a variable texto oculto
       var textoOculto = "";
+      //Creamos o bucle para recorrer o texto
       for (var i = 0; i < texto.length; i++) {
+
+        //Gardamos a letra co valor que salga do bucle
         var caracter = texto[i];
 
+        //Comprobamos se o carácter é unha letra que queremos cambiar
         if ("aeiouáéíóú".includes(caracter.toLowerCase())) {
+          //Se é unha vogal, gardámola no texto oculto
           textoOculto += " ";
         } else {
+          //Se non ten unha vogal, mostramos o caracter gardado e engadimola a varible
           textoOculto += caracter;
         }
       }
+      //Mostrámola
       console.log(textoOculto);
     </script>
   </body>
