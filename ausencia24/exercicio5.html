@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 5
+  </head>
+  <body>
+    <script>
+        // Pedimos os datos ao usuusario
+        let correo = prompt("Introduce o teu email:");
+
+        //Iniciamos o booleano que nos indicara se é correcto
+        let valida = true;
+
+        //Comprobamos o @
+
+        if (correo.indexOf("@") === -1 || correo.indexOf("@") !== correo.lastIndexOf("@")){
+            valida = false;
+        }
+
+        // Comprobamos o espazo en branco
+
+        if (correo.includes(" ")){
+            valida = false;
+        }
+
+        // Comprobamos os caracteres
+        /*let caracteres = [".", "-", "_"];
+
+        for (let i = 0; i < correo.length; i++){
+            const simbolo = correo[i];
+            if (!())
+        }
+*/
+
+        if (valida){
+            console.log("O email é válido.")
+        }else{
+            console.log("O email non é válido.")
+        }
+    </script>
+  </body>
+</html>

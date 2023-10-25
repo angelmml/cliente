@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 1
+    <br />
+  </head>
+  <body>
+    <script>
+      /*
+          1. Crea un progama que indique cal é o elemento máis repetido dun array unidimensional e cantas veces aparece.
+          */
+
+      // Declaramos o array
+      let matriz = [4, 4, 2, 5, 3, 5, 4];
+
+      // Iniciamos contadores e variables
+      let maisrepetido;
+      let numRepeticions = 0;
+
+      //Recorremos o array e comprobamos
+      for (let i = 0; i < matriz.length; i++) {
+        let contador = 0;
+        for (let j = 0; j < matriz.length; j++) {
+          if (matriz[i] === matriz[j]) {
+            contador++;
+          }
+        }
+        if (contador > numRepeticions) {
+          numRepeticions = contador;
+          maisrepetido = matriz[i];
+        }
+      }
+      //Mostramos a informacion
+      console.log(
+        `O elemento máis repetido é "${maisrepetido}" que aparece "${numRepeticions}" veces.`
+      );
+    </script>
+  </body>
+</html>
