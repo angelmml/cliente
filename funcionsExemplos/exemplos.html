@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exemplos Funciones</title>
+  </head>
+  <body>
+    <script>
+      /*function calcularCuadrado (numero){
+                let resultado = 0;
+                resultado = numero ** 2;
+                return resultado;
+            }
+            console.log(calcularCuadrado(4));
+
+*/
+      /* function raizCuadrada(numero){
+                return(Math.sqrt(numero));
+
+            }
+            */
+      /*console.log(raizCuadrada(4));*/
+      /* function calcularMayor(vector){
+                let mayor = raizCuadrada(vector[0]);
+                for (let i = 0; i<vector.length; i++){
+                    if (raizCuadrada(vector[i])>mayor)
+                    mayor = raizCuadrada(vector[i]);
+                }
+                return mayor;
+            }
+            console.log(calcularMayor([64,128,4,1024,16]));
+            */
+      //Crear unha funcion que comprobe se o numero é primo
+
+      // O número pasase por parámetro.
+      // Deve evaluarse se é primo ou non, dependendo do que devolva
+      // (true ou false) a función, no programa principal.
+      // Si e false o resultado, imprimese que non é primo.
+      // Se é true, imprime que é primo.
+
+
+      /*
+      function esPrimo(numero) {
+        if (numero <= 1) {
+          return false;
+        } else if (numero <= 3) {
+          return true;
+        } else if (numero % 2 === 0 || numero % 3 === 0) {
+          return false;
+        }
+
+        let i = 5;
+        while (i * i <= numero) {
+          if (numero % i === 0 || numero % (i + 2) === 0) {
+            return false;
+          }
+          i += 6;
+        }
+
+        return true;
+      }
+
+      // Programa principal
+      let numero = parseInt(prompt("Introduce un numero:")); // Cambia este número por el que desees comprobar
+
+      if (esPrimo(numero)) {
+        console.log(numero + " es primo.");
+      } else {
+        console.log(numero + " no es primo.");
+      }
+      */
+
+
+      //Ámbitos 1
+
+      /*
+
+      var mensaje = "Fuera de la función";
+      function mostrarAnuncio(){
+        var mensaje = "Dentro de la función";
+        console.log(mensaje);
+      }
+      mostrarAnuncio();
+      console.log(mensaje);
+      */
+
+      //Ámbitos 2
+      /*
+      var mensaje = "Fuera de la función";
+      function mostrarAnuncio(){
+        console.log(mensaje);
+      }
+      mostrarAnuncio();
+      console.log(mensaje);
+      */
+
+      //Copia de valores, paso por valor
+
+ /*      var numero1 = 33;
+      var numero2 = 32;
+      function menor(primero, segundo){
+        var elmenor = primero;
+        if (segundo < primero)
+                elmenor = segundo
+                return elmenor;
+      }
+      console.log(menor(numero1,numero2)); */
+
+      //Copia de referencias, paso por referencia
+   /*    var vector = [6,2,9,5,3];
+      function menor(elarray){
+        var elmenor = elarray[0];
+        var posicion = 0;
+        for (let i=0; i<elarray.length; i++)
+          if (elarray[i]<elmenor){
+            elmenor = elarray[i];
+            posicion = i;
+          }
+          elarray[posicion] = -1;
+          return elmenor;
+        }
+        console.log(menor(vector));
+        console.log(vector);
+       */
+
+
+       // Parámetros por defecto
+
+/*        function dividir(numerador=2, denominador = 2){
+        return (numerador/denominador);
+       }
+       console.log(dividir(8));
+       console.log(dividir(4,6));
+       console.log(dividir());  */
+
+
+       //Funcions por expresión
+       /*const bienvenido =  function sesionIniciada(){
+        console.log("Bienvenido de nuevo");
+       };
+       bienvenido();
+       sesionIniciada();*/
+
+
+       // Uso función callback
+       const bienvenido = function(){
+        return "Bienvenido de nuevo, ";
+       };
+       const usuario = function (callback){
+        console.log(callback()+ "Javier");
+       };
+       usuario(bienvenido);
+
+
+       
+    </script>
+  </body>
+</html>
