@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio 2
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Constrúe un programa que valide unha páxina web co seguinte formato.
+            a) Debe comezar por www.
+            b) Debe ter un dominio de dúas ou tres letras. Ex: www.barcelona.com ou www.xardin.au
+            */
+
+            // Pedimos a url ao usuario:
+            let url = prompt("Introduce a páxina que queres comprobar:");
+
+            //Iniciamos o booleano que indicará se se cumple o que pedimos
+            let valida = true;
+
+            //COmprobamos os requerimentos
+            if (url.includes("www.")){
+                valida;
+            }else if((url.indexOf(".com")=== -1 || url.lastIndexOf(".au") === -1)){
+                 valida = false;
+            }
+
+            //Mostramos o resultado
+            if (valida){
+                console.log("A web é válida")
+            }else{
+                console.log("A web non é válida")
+            }
+        </script>
+    </body>
+</html>

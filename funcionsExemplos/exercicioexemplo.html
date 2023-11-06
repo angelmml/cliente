@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+// Crea unha funcion que reciba por parametro un array de 5 elementos
+// previamente cargados no exterior con numeros no interior da funcion
+// busque cal e o menor grabando a posicion do menor coa letra "M",
+// no exterior unha vez se chama a funcion imprimimos o contido do array.
+
+const numeros = [];
+
+function pedirNumeros(){
+for (let i = 0; i < 5; i++){
+    let numero = parseInt(prompt("Introduce un número:"));
+    numeros.push(Number(numero));
+}
+}
+function menorNum(array){
+    let minimo=array[0];
+
+    for (let i=1; i<array.lenght; i++){
+        if (array[i]< minimo){
+            minimo=array[i];
+        }
+    }
+    return minimo;
+}
+
+        </script>
+    </body>
+</html>

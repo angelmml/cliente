@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            // Crear una funcion que devuelva si el parametro que 
+            // se pasa é unha vocal ou non é unha vocal
+
+
+            // Pedimos a letra ao usuario
+            let caracter = prompt("Introduce un caracter:");
+            // Creamos a función
+            function devolveResultado(){
+                // Comprobamos se a letra e igual a unha vocal
+                if(caracter.toLowerCase() == "a" || caracter.toLowerCase() == "e" || caracter.toLowerCase() == "i" || caracter.toLowerCase() == "o" || caracter.toLowerCase() == "u"){
+                // Mostramos o resultado se se cumple o requisito.
+            console.log("A letra que introduciches é unha vocal.");
+            }else{
+                // Mostramos o resultado se non se cumple.
+                console.log("Non é unha vocal.");
+            }           
+        }
+
+            // Chamamos a función.
+       devolveResultado(caracter);
+        </script>
+    </body>
+</html>

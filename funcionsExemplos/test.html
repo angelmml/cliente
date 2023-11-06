@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            let palabraSecreta = "podio"; // Palabra secreta predeterminada
+            let palabraUsuario;
+
+            // Función para establecer la palabra ingresada por el usuario
+            function establecerPalabraUsuario() {
+                palabraUsuario = prompt("Introduce una palabra:");
+            }
+
+            function comprobarPalabra(palabraSecreta, palabraUsuario) {
+                let mensaje = "";
+
+                for (let i = 0; i < palabraSecreta.length; i++) {
+                    if (palabraUsuario.includes(palabraSecreta[i])) {
+                        mensaje += palabraSecreta[i];
+                    } else {
+                        mensaje += "_";
+                    }
+
+                    // Agregar espacio entre letras
+                    if (i < palabraSecreta.length - 1) {
+                        mensaje += " ";
+                    }
+                }
+
+                alert("Acertaste: " + mensaje);
+            }
+
+            // Ejemplo de uso:
+            let coincidencia = false;
+
+            while (!coincidencia) {
+                establecerPalabraUsuario(); // El usuario establece la palabra a comparar
+                comprobarPalabra(palabraSecreta, palabraUsuario);
+                coincidencia = palabraUsuario === palabraSecreta;
+            }
+        </script>
+    </body>
+</html>
