@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            Exercicio 5
-        </title>
-    </head>
-    <body>
-        <script>
-        /*
+  <head>
+    <title>Exercicio 5</title>
+  </head>
+  <body>
+    <script>
+      /*
         Crear una función que devuelva true si, recibidas dos palabras,
         estas contienen las mismas letras aunque estean en posiciones
         distintas.
         */
-        
-        let palabra1 = prompt("Introduce a primeira palabra: ");
-        let palabra2 = prompt("Introduce a segunda palabra: ");
-        /*function coinciden(palabra1, palabra2){
-            const array1 = palabra1.split("");
-            const array2 = palabra2.split("");
+      function son_anagramas(palabra1, palabra2) {
+        // Convertimos as palabras en conxuntros.
+        const conxunto1 = new Set(palabra1);
+        const conxunto2 = new Set(palabra2);
 
-            array1.sort();
-            array2.sort();
+        // Miramos se os conxuntos teñen o mesmo tamaño.
+        if (conxunto1.size !== conxunto2.size) {
+          return false;
+        }
 
-            if (array1 === array2){
-            return console.log("As palabras coinciden.");
-            }else{
-                return console.log("As palabras non coinciden");
-            }
-        }*/
-        function coinciden(palabra1, palabra2) {
-  // Convertimos las palabras a arrays.
-  const array1 = palabra1.split("");
-  const array2 = palabra2.split("");
+        // Recorremos cada letra do primeiro conxunto.
+        for (const letra of conxunto1) {
+          // Se a letra non está presente no segundo conxunto, non son anagramas.
+          if (!conxunto2.has(letra)) {
+            return false;
+          }
+        }
 
-  // Ordenamos los arrays.
-  array1.sort();
-  array2.sort();
+        // As palabras son anagramas.
+        return true;
+      }
 
-  // Comparamos los arrays.
-  return array1 === array2;
-}
+      const palabra1 = "coms";
+      const palabra2 = "moco";
 
-
-        coinciden(palabra1, palabra2);
-        </script>
-    </body>
+    console.log(son_anagramas(palabra1, palabra2)); 
+    </script>
+  </body>
 </html>
