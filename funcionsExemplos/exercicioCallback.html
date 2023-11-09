@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            
-        </title>
-    </head>
-    <body>
-        <script>
-        /*
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
         Escribe una función llamada addArray que tome una matriz de 
         números como primer argumento y una función de devolución 
         de llamada como segundo argumento. La función de devolución
@@ -16,7 +14,19 @@
         Ejemplo: function sumarArray(arr, callback)
         */
 
-        
-        </script>
-    </body>
+      function addArray(arr, callback) {
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+          total += callback(arr[i]);
+        }
+        return total;
+      }    
+      const numbers = [1, 2, 3, 4, 5];     
+      function recoller(num) {
+        return num;
+      }      
+      const sum = addArray(numbers, recoller);
+      console.log(sum); 
+    </script>
+  </body>
 </html>
