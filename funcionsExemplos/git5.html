@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio 5
+        </title>
+    </head>
+    <body>
+        <script>
+        /*
+        Crear una función que devuelva true si, recibidas dos palabras,
+        estas contienen las mismas letras aunque estean en posiciones
+        distintas.
+        */
+        
+        let palabra1 = prompt("Introduce a primeira palabra: ");
+        let palabra2 = prompt("Introduce a segunda palabra: ");
+        /*function coinciden(palabra1, palabra2){
+            const array1 = palabra1.split("");
+            const array2 = palabra2.split("");
+
+            array1.sort();
+            array2.sort();
+
+            if (array1 === array2){
+            return console.log("As palabras coinciden.");
+            }else{
+                return console.log("As palabras non coinciden");
+            }
+        }*/
+        function coinciden(palabra1, palabra2) {
+  // Convertimos las palabras a arrays.
+  const array1 = palabra1.split("");
+  const array2 = palabra2.split("");
+
+  // Ordenamos los arrays.
+  array1.sort();
+  array2.sort();
+
+  // Comparamos los arrays.
+  return array1 === array2;
+}
+
+
+        coinciden(palabra1, palabra2);
+        </script>
+    </body>
+</html>
