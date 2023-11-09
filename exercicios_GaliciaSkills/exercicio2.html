@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 2
+  </head>
+  <body>
+    <script>
+        //Creamos o array
+       let matriz = [];
+
+       //Xeramos os numeros aleatorios
+       for (let i = 0; i < 100; i++){
+        matriz[i] = Math.floor(Math.random()*10)+1;
+       }
+
+       //Iniciamos a variable na que gardaremos a suma
+       let suma = 0;
+
+       //Recorremos e sumamos os eklementos 
+       for (let i = 0; i < matriz.length; i++){
+        suma = suma + matriz[i];
+       }
+       // Mostramos o resultado
+       if (suma > 500){
+        console.log("A suma dos números é maior.");
+       }else{
+        console.log("A suma dos números é menor.");
+       }
+    </script>
+  </body>
+</html>
