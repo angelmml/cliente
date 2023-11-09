@@ -19,8 +19,35 @@
             numero de 0-120.
             */
 
+            let idade = parseInt(prompt("Introduce a idade:"));
 
+            function idadeCorrecta(idade){
+                if (idade >= 0 && idade <= 120) {
+                    return true;
+                } else{
+                    return false;
+                }
+            };
+          
+            function fase(idade, idadeValida){
+                if (idadeValida(idade)){
+                if (idade >= 0 && idade <= 3) {
+                    return "Bebe";
+                    } else if (idade > 3 && idade <= 11) {
+                    return "Neno";
+                    } else if (idade > 11 && idade <= 18) {
+                    return "Adolescente";
+                    }else{
+                    return "Adulto"}
+            }else{
+                return "Idade non válida";
+            }
+        }
             
+        
+        console.log(fase(idade, idadeCorrecta));
+        </script>
+    </body>
         </script>
     </body>
 </html>
