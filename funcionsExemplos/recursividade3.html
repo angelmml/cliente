@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Recursividade3
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Insertar en un array, números aleatorios
+            El número mínimo y máximo de elementos del array
+            se debe pedir desde el teclado.
+            Debe realizarse con funciones flecha y recursividad.
+            */
+
+
+            const insertarAleatorio = (array, min, max) => {
+               
+                if (array.length >= min && array.length <= max) {
+                    return array;
+                    } else{
+                        array.push(Math.floor(Math.random() * (max - min + 1) + min));
+                        console.log("Array: ", array);
+                        return insertarAleatorio(array, min, max);
+                    }
+                        
+            };
+            
+            const min = parseInt(prompt("Introduce o número máis baixo: "));
+            const max = parseInt(prompt("Introduce o numero máis alto: "));
+            insertarAleatorio([], min, max);
+        </script>
+    </body>
+</html>
