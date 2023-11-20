@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../apuntesExame/exercicios"
+		},
+		{
+			"path": "../../interfacesCode"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "cliente"
+	}
+}
