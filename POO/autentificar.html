@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Autentificar</title>
+  </head>
+  <body>
+    <script>
+      /*
+            Crea un objeto llamado usuario que permita autentificar
+            a una persona que tiene que iniciar sesión en el sistema.
+
+            Tendrá una ID y una contraseña:
+            */
+      class Usuario {
+        constructor() {
+          this.id = "Josep";
+          this.password = "123456";
+        }
+
+        validar(idIngresada, contrasenaIngresada) {
+          return (
+            this.id === idIngresada && this.password === contrasenaIngresada
+          );
+        }
+      }
+
+      // Crear una instancia del objeto Usuario
+      const usuario = new Usuario();
+
+      // Solicitar al usuario que ingrese su ID y contraseña (simulado con prompt)
+      const idIngresada = prompt("Ingresa o teu ID:");
+      const contrasenaIngresada = prompt("Ingresa o teu contrasinal:");
+
+      // Validar
+      if (usuario.validar(idIngresada, contrasenaIngresada)) {
+        console.log("Inicio de sesión exitoso");
+      } else {
+        console.log("Inicio de sesión fallido. Verifica ID e contrasinal.");
+      }
+    </script>
+  </body>
+</html>
