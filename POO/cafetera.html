@@ -25,34 +25,44 @@
             */
 
       class Cafetera {
-        capacidadMaxima = 1000;
-        cantidadActual = 0;
-        constructor(cMax, cAct) {
-          this.capacidadMaxima = cMax;
-          this.cantidadActual = cAct;
+        constructor(capacidadMaxima = 1000, cantidadActual = 0) {
+          this._capacidadMaxima = capacidadMaxima;
+          this._cantidadActual = Math.min(cantidadActual, capacidadMaxima);
         }
+
         llenarCafetera() {
-          this.cantidadActual = this.capacidadMaxima;
+          this._cantidadActual = this._capacidadMaxima;
         }
-        servirTaza(taza) {
-          if (this.cantidadActual >= taza) {
-            this.cantidadActual -= taza;
+
+        servirTaza(cantidad) {
+          if (this._cantidadActual >= cantidad) {
+            this._cantidadActual -= cantidad;
+            console.log(`Servimos ${cantidad} ml de café.`);
           } else {
-            let dif = this.cantidadActual - taza;
-            this.cantidadActual = 0;
-            alert("No hay suficiente cafe");
+            console.log("No hai suficiente café pra encher a taza.");
+            this._cantidadActual = 0;
           }
         }
+
         vaciarCafetera() {
-          this.cantidadActual = 0;
+          this._cantidadActual = 0;
+          console.log("Vacíouse a cafetera.");
         }
-        agregarCafe(nuevoCafe) {
-          this.cantidadActual += nuevoCafe;
-          if (this.cantidadActual > this.capacidadMaxima) {
-            this.cantidadActual = this.capacidadMaxima;
-          }
+
+        agregarCafe(cantidad) {
+          this._cantidadActual = Math.min(
+            this._cantidadActual + cantidad,
+            this._capacidadMaxima
+          );
+          console.log(`Engadiuse ${cantidad} de café na cafetera.`);
         }
       }
+
+      const miCafetera = new Cafetera();
+      miCafetera.llenarCafetera();
+      miCafetera.servirTaza(200);
+      miCafetera.vaciarCafetera();
+      miCafetera.agregarCafe(500);
     </script>
   </body>
 </html>
