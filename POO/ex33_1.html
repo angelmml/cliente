@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
+            
+        2. Crear un array de objectos que
+        contenga poblaciones e códigos postais.
+        Percorrer as propiedades de cada un dos
+        obxectos cargados previamente por pantalla. 
+ 
+        Pídese: 
+        Definir o obxecto e array. 
+        Cargar os datos (usando prompt). 
+        Imprimir as propiedades usando un for, sin observadores. 
+*/
+      // Definir o objeto Poblacion
+    class Poblacion{
+    constructor(nombre, codigoPostal) {
+        this.nombre = nombre;
+        this.codigoPostal = codigoPostal;
+      }
+    }
+      // Creamos o array de objetos
+      var cantidadPoblaciones = parseInt(prompt("Cantas poblaciones deseas introducir?"))
+      var poblaciones = [];
+
+      //Cargar datos do prompt
+      for (var i = 0; i < cantidadPoblaciones; i++) {
+        var nombre = prompt("Introduce o nome da poblacion " + (i + 1) + ":");
+        var codigoPostal = prompt("Introduce o código postal da población " + (i + 1) + ":");
+        poblaciones.push(new Poblacion(nombre, codigoPostal));
+    }
+
+      // Recorrer e imprimir as prpiedades de cada obxecto
+      for (var i = 0; i < poblaciones.length; i++) {
+        var poblacion = poblaciones[i];
+        document.write("Nombre: " + poblacion.nombre +"<br>");
+        document.write("CP: " + poblacion.codigoPostal +"<br>");
+        document.write("-------------------------<br>");
+      }
+    </script>
+  </body>
+</html>

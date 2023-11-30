@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
+            
+    1. Comprobar que tipo de obxecto temos e imprimir os seus valores. Previamente, crear: 
+ 
+    Un mapa con 2 libros que conteñan, Código e título. 
+    Un array con dous obxectos persoa. Atributos: dni, nome e apelidos. 
+    Un obxecto chamado casa: Número e poboación. 
+    Usar instanceof cando sexa necesario.
+    A saída por pantalla debe ser: 
+ 
+    Obxecto tipo: Mapa 
+    Código-Título 
+    1-La caza. 
+ 
+    Obxecto tipo: Array 
+    47350553w Juan Gómez Landa 
+    32582241x Ana María Pérez Lema 
+ 
+    Obxecto tipo: Object 
+    Número: 3 
+    Pobación: A Gudiña.   
+*/
+      // Crear el mapa con 2 libros
+      let libros = new Map();
+      libros.set("1", "La caza");
+      libros.set("2", "Otro libro");
+
+      // Crear el array con 2 objetos persona
+      let personas = [
+        { dni: "47350553w", nome: "Juan", apelidos: "Gómez Landa" },
+        { dni: "32582241x", nome: "Ana María", apelidos: "Pérez Lema" },
+      ];
+
+      // Crear el objeto casa
+      let casa = {
+        número: 3,
+        poboación: "A Gudiña",
+      };
+
+      // Imprimir los valores de los objetos
+      console.log(
+        "Obxecto tipo: " + (libros instanceof Map ? "Mapa" : "Descoñecido")
+      );
+      for (let [código, título] of libros) {
+        console.log("Código-Título");
+        console.log(código + "-" + título);
+      }
+
+      console.log(
+        "Obxecto tipo: " + (personas instanceof Array ? "Array" : "Descoñecido")
+      );
+      for (let persona of personas) {
+        console.log(persona.dni + " " + persona.nome + " " + persona.apelidos);
+      }
+
+      console.log(
+        "Obxecto tipo: " + (casa instanceof Object ? "Object" : "Descoñecido")
+      );
+      console.log("Número: " + casa.número);
+      console.log("Poboación: " + casa.poboación);
+    </script>
+  </body>
+</html>
