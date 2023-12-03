@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 3
+  </head>
+  <body>
+    <script>
+
+        /*
+        En este ejemplo, la función procesarArray toma un array y una función de devolución de llamada como argumentos. Itera sobre cada elemento del array y aplica la función de devolución de llamada a cada elemento, construyendo así un nuevo array con los resultados.
+
+        En este caso, multiplicarPorDos es la función de devolución de llamada que simplemente multiplica cada número por 2. Puedes cambiar la función de devolución de llamada a otras funciones según sea necesario para realizar diferentes operaciones sobre los elementos del array. Este es un patrón común en JavaScript, especialmente al trabajar con funciones de orden superior.
+        */
+
+      // Función de devolución de llamada que multiplica un número por 2
+      function multiplicarPorDos(numero) {
+        return numero * 2;
+      }
+
+      // Función que aplica la función de devolución de llamada a cada elemento de un array
+      function procesarArray(array, callback) {
+        var resultado = [];
+        for (var i = 0; i < array.length; i++) {
+          resultado.push(callback(array[i]));
+        }
+        return resultado;
+      }
+
+      // Array de números
+      var numeros = [1, 2, 3, 4, 5];
+
+      // Aplicar la función de devolución de llamada a cada elemento del array
+      var resultadoMultiplicado = procesarArray(numeros, multiplicarPorDos);
+
+      // Mostrar el resultado
+      console.log("Array original:", numeros);
+      console.log("Array multiplicado por dos:", resultadoMultiplicado);
+    </script>
+  </body>
+</html>
