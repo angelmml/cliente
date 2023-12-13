@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicio 4</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Escribir un programa que:
+        • Pida unha frase ó usuario e a pase por parámetro á función
+        • Cree un vector de strings con cada palabra do usuario.
+        • Cree un mapa coa lonxitude de cada palabra e a amose por pantalla.
+        RESULTADO:
+        Introduce unha frase: “No hay tregua”
+        Vector=[“No”,”hay”,”tregua”]
+        SAÍDA:
+        No----2
+        Hay----3
+        Tregua---6
+        */
+
+      // Función para crear un vector de palabras coa frase
+      function procesarFrase(frase) {
+        // Crear un vector de strings con cada palabra de la frase
+        var vectorPalabras = frase.split(" ");
+        // Crear un mapa coa lonxitude de cada palabra.
+        var mapaLonxitudes = new Map();
+
+        //Iterar sobre o vector de palabras e almacenar a súa lonxitude no mapa
+        for (var i = 0; i < vectorPalabras.length; i++) {
+        //Obter a palabra actual do bucle
+          var palabra = vectorPalabras[i];
+          //Gardar a lonxitude da palabra no mapa
+          mapaLonxitudes.set(palabra, palabra.length);
+        }
+        // Mostrar as lonxitudes das palabras por pantalla
+        console.log("SAÍDA:");
+        for (var [palabra, lonxitude] of mapaLonxitudes) {
+        //Mostrar a palabra e a sua lonxitude na consola
+          console.log(palabra + "----" + lonxitude);
+        }
+      }
+      // Pedir unha frase ó usuario
+      var frase = prompt("Introduce unha frase:");
+      // Crear o vector de palabras e amosar as lonxitudes
+
+      //Divide a cadena en palabras usando o espacio como separador
+      var vectorPalabras = frase.split(" ");
+      //Convertir o vector de palabrras a unha cadena con comas e corchetes
+      var vectorString = "[" + vectorPalabras.join(", ") + "]";
+      //Mostrar en pantalla
+      console.log("Vector=" + vectorString);
+
+      // Chamar a funcion para procesar a frase
+      procesarFrase(frase);
+    </script>
+  </body>
+</html>

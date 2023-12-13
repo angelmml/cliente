@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exercicio 5</title>
+  </head>
+  <body>
+    <script>
+      /*
+            Realizar un programa en JS que pida un número natural N ó usuario e escriba por pantalla
+            unha figura como a amosada a continuación:
+            1
+            2 2
+            …
+            N N … N
+            Exemplos de execución:
+            ================================================================
+            Introduce un número (>0): 44
+            Número non válido. Introduce un número: 4
+            1
+            2 2
+            3 3 3
+            4 4 4 4
+            ================================================================
+            Introduce un número (>0): 3
+            1
+            2 2
+            3 3 3
+            */
+
+      // Programa para imprimir unha figura triangular con números repetidos
+      // Función para validar se un número es válido (> 0)
+      function validarNumero(numero) {
+        return numero > 0;
+      }
+      // Función para imprimir a figura triangular
+      function imprimirFigura(n) {
+        // Validar se o número é válido
+        if (!validarNumero(n)) {
+          console.log("Número non válido. Introduce un número:");
+          return;
+        }
+        //Bucle externo que itera desde 1 ata n
+        for (var i = 1; i <= n; i++) {
+            //Iniciar unha cadea vacia para almacenar a fila actual
+          var fila = "";
+          // Bucle interno para costruir a fila actual
+          for (var j = 1; j <= i; j++) {
+            //Agregar o número i seguido de un espacio na fila
+            fila += i + " ";
+          }
+          //Imprime a fila actual na consola despois de eliminar os espacios en blanco ao final
+          console.log(fila.trim());
+        }
+      }
+      // Pedir un número al usuario
+      var numero = prompt("Introduce un número (>0):");
+      // Pasamos o numero a enteiro
+      numero = parseInt(numero);
+      // Chamar á función para imprimir a figura triangular
+      imprimirFigura(numero);
+    </script>
+  </body>
+</html>

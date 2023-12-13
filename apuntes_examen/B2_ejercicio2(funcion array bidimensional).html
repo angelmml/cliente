@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ex2</title>
+  </head>
+  <body>
+    <script>
+        /*
+        Crear unha función que recibe dous parámetros x e y e xere dentro
+        da función un array de x X y elementos que deberán ser impresos. 
+        */
+
+      //Definimos a funcion que colle os parámetros x e y creando unha matriz bidimensional
+      function crear(x, y) {
+        //Crease un array vacio para almacenar as filas da matriz/array bidimensional
+        let arrai = [];
+        //Bucle que se executará x veces (numero de filas)
+        for (let i = 0; i < x; i++) {
+            //En cada iteracion do bucle externo, agregamos un array vacio para representar o numero de filas
+          arrai[i] = [];
+
+          //Bucle interno que se executará "y" veces (número de columnas)
+          for (let j = 0; j < y; j++) {
+            //En cada iteracion del bucle interno, se asigna el valor 0 a cada posición [i][j] de la matriz
+            arrai[i][j] = 0;
+          }
+        }
+        //Devólvese a matriz bidimensional creada
+        return arrai;
+      }
+
+
+      //Definición das dimensions da matriz
+      x = 3;
+      y = 4;
+
+      //Chamamos a función crear para obter a matriz
+      var show = crear(x, y);
+      //Bucle para imprimir a matriz no documento HTML
+      for (let i = 0; i < x; i++) {
+        document.write("<br>");//salto de liña na primeira volta do bucle
+        for (let j = 0; j < y; j++) {
+          document.write(show[i][j]);//Impresion do valor de cada posicion da matriz
+        }
+      }
+    </script>
+  </body>
+</html>

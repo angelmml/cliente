@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicio1</title>
+  </head>
+  <body>
+    <script>
+        /*
+        Xerar 500 números aleatorios do 1 ao 500 que serán volcados nun array. Pasar este array
+        por referencia a unha función e imprimir por cada un deses números se é par ou impar. 
+        */
+
+
+      // Función para xerar un número aleatorio entre min e max
+      function xerarNumeroAleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      // Función para imprimir se un número é par ou impar
+      function imprimirParidade(numero) {
+        if (numero % 2 === 0) {
+          console.log(numero + " é par");
+        } else {
+          console.log(numero + " é impar");
+        }
+      }
+      // Xerar o array de números aleatorios
+      var numeros = [];
+      for (var i = 0; i < 500; i++) {
+        numeros.push(xerarNumeroAleatorio(1, 500));
+      }
+      // Pasar o array por referencia e imprimir paridade
+      for (var i = 0; i < numeros.length; i++) {
+        imprimirParidade(numeros[i]);
+      }
+    </script>
+  </body>
+</html>

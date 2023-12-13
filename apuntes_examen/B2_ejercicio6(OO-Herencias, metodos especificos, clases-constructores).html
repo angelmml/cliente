@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio6
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+
+            */
+           // Definición da clase base Vehículo
+class Vehiculo {
+ constructor(modelo, capacidad) {
+ this.modelo = modelo;
+ this.capacidade = capacidade;
+ }
+ imprimeDatos() {
+ return `Modelo: ${this.modelo}, Capacidad: ${this.capacidade}`;
+ }
+}
+// Definición da clase Avión que herda de Vehículo
+class Avión extends Vehiculo {
+ constructor(modelo, capacidad, aerolínea) {
+ super(modelo, capacidad);
+ this.aerolínea = aerolínea;
+ }
+ fly() {
+ console.log(`O avión está voando. Compañía aérea: ${this.aerolínea}`);
+ }
+}
+// Crear unha instancia da clase Avión
+const avion = new Avión('Boeing 747', 500, 'Airline XYZ');
+// Amosar a descrición do avión e facelo voar
+console.log(avion.imprimeDatos());
+avion.fly();
+        </script>
+    </body>
+</html>

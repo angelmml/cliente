@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ex1</title>
+  </head>
+  <body>
+    <script>
+    /*
+    Un mapa con 2 libros que conteñan, Código e título.
+    Un array con dous obxectos persoa. Atributos: dni, nome e apelidos. liña 68
+    Un obxecto chamado casa: Número e poboación.
+    A saída por pantalla debe ser:
+    Obxecto tipo: Mapa
+    Código-Título
+    1-La caza.
+    Obxecto tipo: Array
+    47350553w Juan Gómez Landa
+    32582241x Ana María Pérez Lema
+    Obxecto tipo: Object
+    Número: 3
+    Pobación: A Gudiña.
+    */
+      //objetos de array
+      //menu de opcion (se pulso 1, se pulso 2)
+      
+      // Creación de mapa
+      let libros = new Map();
+      libros.set("1", "la caza");
+      libros.set("2", "pablo tarde outra vez");
+      //Creamos un objeto Map chamado libros que almacena pares clave-valor.
+      //Aas claves son os numeros de cadena "1" e "2" e os valores os títulos dos libros.
+
+
+      //Comprobamos se o objeto é un mapa usando instanceOf
+      if (libros instanceof Map) {
+        document.write("tipo de objeto: mapa");
+        document.write("codigo , titulo");
+        // O for itera sobre os elementos para imprimir as claves e valores
+        for (let [codigo, titulo] of libros) {
+          document.write(` ${codigo}, ${titulo} `);
+        }
+      }
+      
+      //Definir clase xente (personas)
+      //Definimos unha clase chamada xente que conteña as propiedades "dni" e "nombre"
+      class xente {
+        dni;
+        nombre;
+
+      //O constructor inicializa estas propiedades
+        constructor(dni, nombre) {
+          this.dni = dni;
+          this.nombre = nombre;
+        }
+        
+        //O observador para imprimilas.
+        observador() {
+          document.write(this.dni);
+          document.write(this.nombre);
+        }
+      }
+   
+     
+
+      //Creacion de array personas
+     let arraipersonas = [];
+     //Verificamos se o arraypersonas é unha instancia de array
+      if (arraipersonas instanceof Array) {
+        //Se o array é unha instancia de array, pidese ao usuario que introduza o nome é o dni
+        // de dúas personas (bucle for)
+        for (let i = 0; i < 2; i++) {
+          nomepersona = prompt("introduce o nome da persona");
+          dnipersona = prompt("introduce dni");
+          //Crea un obxecto "xente" para cada unha e engadea ao array (arraypersonas.push)
+          let persona = new xente(nomepersona, dnipersona);
+          arraipersonas.push(persona);
+        }
+
+        //Iterase sobre o array e chámase ao método observador para imprimir a información de cada persona.
+        for (let a = 0; a < arraipersonas.length; a++) {
+          document.write(arraipersonas[a].observador());
+        }
+      } else {
+        document.write("non é un array");
+      }
+
+      //Definición de clase pueblos
+      class pueblos {
+        poeblo;
+        xente;
+
+        //Constructor para inicializar
+        constructor(xente, poeblo) {
+          this.poeblo = poeblo;
+          this.xente = xente;
+        }
+
+        //Observador que as imprime
+        observador() {
+          document.write(this.poeblo);
+          document.write(this.xente);
+        }
+      }
+
+      //Creacion de objeto pueblo, da clase pueblos
+      let poeblo = new pueblos(3, "a gudiña");
+
+      //Verificación e visualización do obxecto, se o é, cháma ao método "observador" para imprimir
+      //a información de pueblo, se non, imprime que non é un obxecto.
+      if (poeblo instanceof Object) {
+        poeblo.observador();
+      } else {
+        document.write("non é un obxecto");
+      }
+
+    </script>
+  </body>
+</html>

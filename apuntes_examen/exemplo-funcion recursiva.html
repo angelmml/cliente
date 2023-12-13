@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 3
+  </head>
+  <body>
+    <script>
+
+        /*
+        En este ejemplo, la función factorial se llama a sí misma de forma recursiva para calcular
+        el factorial de un número. La condición base (if (n === 0)) detiene la recursión cuando n 
+        llega a cero. La función entonces devuelve el producto del número actual n y el resultado de 
+        la llamada recursiva con n - 1.
+        */
+       
+      // Función recursiva para calcular el factorial de un número
+      function factorial(n) {
+        // Caso base: el factorial de 0 es 1
+        if (n === 0) {
+          return 1;
+        } else {
+          // Caso recursivo: n! = n * (n-1)!
+          return n * factorial(n - 1);
+        }
+      }
+
+      // Ejemplo de uso: calcular el factorial de 5
+      var resultado = factorial(5);
+      console.log("El factorial de 5 es:", resultado);
+    </script>
+  </body>
+</html>
