@@ -1,0 +1,54 @@
+<html>
+  <title>Exericio5</title>
+
+  <body>
+    <script>
+      /*
+        Realizar un programa en JS que pida un número natural N ó usuario e escriba por pantalla
+        unha figura como a amosada a continuación:
+        1
+        2 2
+        …
+        N N … N
+        Exemplos de execución:
+        ================================================================
+        Introduce un número (>0): 44
+        Número non válido. Introduce un número: 4
+        1
+        2 2
+        3 3 3
+        4 4 4 4
+        ================================================================
+        Introduce un número (>0): 3
+        1
+        2 2
+        3 3 3
+    
+        */
+      //Creamos funcion
+      function validaNumero(numero) {
+        return numero > 0;
+      }
+      // Función para imprimir a figura triangular
+      function imprimeFigura(n) {
+        // Validar se o numero e correcto
+        if (!validaNumero(n)) {
+          console.log("Número non válido. Introduce un número:");
+          return;
+        }
+        for (var i = 1; i <= n; i++) {
+          var fila = "";
+          for (var j = 1; j <= i; j++) {
+            fila += i + " ";
+          }
+          console.log(fila.trim());
+        }
+      }
+      // Pedir un número ao usuario
+      var numero = prompt("Introduce un número (>0):");
+      numero = parseInt(numero);
+      // Chamarmos a funcion para imprimir a figura triangular
+      imprimeFigura(numero);
+    </script>
+  </body>
+</html>

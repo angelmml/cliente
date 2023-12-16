@@ -1,0 +1,33 @@
+<html>
+  <title>Exericio6</title>
+
+  <body>
+    <script>
+      // Definimos vehiculo
+      class Vehiculo {
+        constructor(modelo, carga) {
+          this.modelo = modelo;
+          this.cargae = cargae;
+        }
+        imprimeDatos() {
+          return `Modelo: ${this.modelo}, carga: ${this.cargae}`;
+        }
+      }
+      // Definimos avion (hereda de vehilcuo)
+      class Avión extends Vehiculo {
+        constructor(modelo, carga, aerolínea) {
+          super(modelo, carga);
+          this.aerolínea = aerolínea;
+        }
+        vola() {
+          console.log(`O avión está voando. Compañía aérea: ${this.aerolínea}`);
+        }
+      }
+      // Instanciar
+      const avion = new Avión("Boeing 747", 500, "Airline XYZ");
+      // Amosar a descrición do avión e facelo voar
+      console.log(avion.imprimeDatos());
+      avion.vola();
+    </script>
+  </body>
+</html>

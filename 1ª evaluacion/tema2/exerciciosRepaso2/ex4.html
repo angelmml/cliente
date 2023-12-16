@@ -18,7 +18,7 @@
     Tregua---6
         */
       // Función para crear un vector de palabras coa frase
-      function procesarFrase(frase) {
+      function transformaFrase(frase) {
         // Crear un vector de strings con cada palabra de la frase
         var vectorPalabras = frase.split(" ");
         // Crear un mapa coa lonxitude de cada palabra.
@@ -28,7 +28,7 @@
           mapaLonxitudes.set(palabra, palabra.length);
         }
         // Mostrar as lonxitudes das palabras por pantalla
-        console.log("SAÍDA:");
+        console.log("Salida:");
         for (var [palabra, lonxitude] of mapaLonxitudes) {
           console.log(palabra + "---" + lonxitude);
         }
@@ -39,7 +39,7 @@
       var vectorPalabras = frase.split(" ");
       var vectorString = "[" + vectorPalabras.join(", ") + "]";
       console.log("Vector=" + vectorString);
-      procesarFrase(frase);
+      transformaFrase(frase);
     </script>
   </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicio8</title>
+</head>
+<body>
+  <script>
+    // Definición da clase Álbum
+    class Album {
+      constructor(nome, autor, canciones, dataLanzamento) {
+        this.nome = nome;
+        this.autor = autor;
+        this.canciones = canciones;
+        this.dataLanzamento = dataLanzamento;
+      }
+
+      verDatos() {
+        document.write(`${this.nome} ${this.autor} ${this.canciones} ${this.dataLanzamento}`);
+      }
+    }
+
+    // Creamos un obxeto album pedindo os datos ao usuario
+    function crearAlbum() {
+      const nome = prompt('Introduce o nome do álbum:');
+      const autor = prompt('Introduce o autor do álbum:');
+      const canciones = prompt('Introduce as cancións do álbum separandoas con comas');
+      const dataLanzamento = prompt('Introduce a data de lanzamento:');
+      return new Album(nome, autor, canciones, dataLanzamento);
+    }
+
+    // Crear un array para almacenar os albums
+    var albumes = [];
+
+    // Solicitar datos e crear os álbumes usando un bucle for
+    for (let i = 0; i < 3; i++) {
+      const album = crearAlbum();
+      albumes.push(album);
+    }
+
+    // Usar os observarores
+    for (let i = 0; i < ablumes.length; i++) {
+      albumes[i].verDatos();
+    }
+  </script>
+</body>
+</html>
+
