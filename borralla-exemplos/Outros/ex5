@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Crear una lista utilizando un array.
+            Debe:
+            Insertar el final del array.
+            Insertar el inicio del array.
+            Insertar en la posicion x del array.
+            Debe permitir las acciones anteriores mediante borrado.
+            */
+
+            var array = [];
+
+            var opcion;
+
+            do {
+                console.log("Seleccione unha opcion:");
+                console.log("1. Insertar ao final");
+                console.log("2. Insertar ao inicio");
+                console.log("3. Insertar en unha posición");
+                console.log("4. Borrar elemento");
+                console,log("5. Mostra array")
+                console.log("0. Salir:");
+
+                opcion = parseInt(prompt("Escolle a opción que desexas:"));
+
+                switch (opcion){
+
+                    case 1: 
+                    
+                    var elementoFinal = prompt("Ingrese el elemento para insertar al final");
+                    array.push(elementoFinal);
+                    break;
+
+                    case 2: 
+                    var elementoInicio = prompt("Ingrese o elemento para insertar ao inicio");
+                    array.unshift(elementoInicio);
+                    break;
+
+                    case 3:
+                    var insertaPosicion = parseint(prompt("Ingresa la posicion donde deseas insertarn"));
+                    var elementoPosicion = prompt("Ingrese o elemento que desexa insertar na posición"+ elementoPosicion);
+                    array.splice(insertaPosicion, 0, elementoPosicion);
+                    break;
+
+                    case 4:
+                    var borraElemento = parseInt(prompt("Ingrese a posicion do elemento a borrar"));
+                    if (borraElemento >=0 && borraElemento < array.length){
+                        array.splice(borraElemento, 1);
+                    }else{
+                        console.log("Posición inválida. Non se borrou nada.");
+                    }
+                    break;
+                    case 5:
+                        console.log("Array actual");
+                        console.log(array);
+                        break;
+                    case 0:
+                        console.log("Exit");
+                        break;
+                    default:
+                        console.log("Opción no válida. Intente nuevamente");
+                        break;
+
+                }
+                
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ex1
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            EXERCICIO 1:
+            Crea un programa que xestione o almacén dunha empresa co seguinte funcionamento.
+            Os produtos entran no almacén porque se compran a un provedor, nunha cantidade que se sumará
+            á cantidade actual do almacén dese produto.
+            Os produtos saen do almacén facendo unha venta que quitará cantidade das existencias actuais.
+            Do produto interesa gardar:
+            Código, nome, provedor, existencias en almacén, última venta realizada e última compra
+            realizada. 
+            Un produto pode darse de alta no almacén sen ser mercado previamente (non precisa provedor, nin
+            cantidade) ou con todos os datos cubertos. (Múltiple construtor). As datas serán gardadas como
+            “string” e no caso de non telas, será a data actual o día hoxe. Ter en conta que ao crear este
+            produto, en todos os casos, as existencias actuais serán sempre 0. 
+            Os movementos de almacén sempre son mediante compras ou ventas.
+            RÚBRICA:
+            Implementar o exercicio de tal forma que:
+            1) Carguemos un só producto. (1pto).
+            2) Carguemos 3 productos. Uso obrigatorio de array. (1pto)
+            3) Vexamos os datos de todos os produtos almacenados. 1 (pto). 
+            a)Nome: o nome.
+            b)Provedor: o provedor. 
+            c) Existencias actuais: Existencias no almacén.
+            d) Data da última compra realizada
+            */
+
+            class Produtos{
+                codigo
+                constructor(codigo, nome, proveedor, existencias = 0, ultima_venta, ultima_compra){
+                    this.codigo = codigo;
+                    this.nome = nome;
+                    this.proveedor = proveedor;
+                    this.existencias = existencias;
+                    this.ultima_venta = ultima_venta;
+                    this.ultima_compra = ultima_compra;
+                }
+            
+                
+
+            observer(){
+                document.write("Producto: " + this.nome);
+                document.write("Proveedor: " + this.proveedor);
+                document.write("Existencias Actuales: " + this.existencias);
+                document.write("Ultima Compra Realizada: " + this.ultima_compra);
+                document.write("Ultima Venta Realizada: " + this.ultima_venta);
+                }
+            }
+            
+            let productos = [];
+            let codigo = "";
+            let nome = "";
+            let proveedor = "";
+            let existencias = "";
+            let ultima_venta = "";
+            let ultima_compra = "";
+            
+            //creamos o bucle para agregar contido ao array
+            for (let i = 1; i < 3; i++){
+                codigo = prompt("Introduce o codigo do producto " + i + ":");
+                nome = prompt("Introduce o Nome do producto " + i + ":");
+                proveedor = prompt("Introduce o proveedor do producto " + i + ":");
+                existencias = prompt("Introduce numero de existencias do producto " + i + ":");
+                ultima_venta = prompt("Introduce a data da última venta do producto " + i + ":");
+                ultima_compra = prompt("Introduce a data da ultima compra do producto " + i + ":");
+                
+                let produto = new Produtos(codigo, nome, proveedor, existencias, ultima_venta, ultima_compra);
+                productos.push(produto);
+
+            }
+            
+
+            const produto1 = new Produtos('14','Paraugas','NonTeMolles');
+            produto1.observer();
+
+            document.write(productos)
+
+            
+           
+    
+                        
+
+        
+        </script>
+    </body>
+</html>

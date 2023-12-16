@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex 4</title>
+    </head>
+    <body>
+        <script>
+            /*
+            Utilizando una función callback concatena dous textos e amosa o resultado eliminando espazos en
+            branco e todo o texto resultante e convertendo o mesmo a minúsculas. 
+            RÚBRICA:
+            Implementa a función callback 1pto.
+            Fai a chamada de forma correcta dende o programa principal e utiliza unha terceira función
+            para imprimir o resultado, utilizada pola función callback. 1Pto.
+            */
+            //Funcion na que sacamos os espazos enbranco
+            function concatenaTextos(primeiroTexto, segundoTexto, chamaResultado){
+                const resultado =primeiroTexto.replace(" ","")+segundoTexto.replace(" ","");
+                chamaResultado(resultado.toLowerCase());
+            }
+            //Funcion que imprime
+            function sacarTextos(texto){
+                document.write(texto.trim());
+            }
+
+            //Peticion ao usuario
+            let primeiroTexto = prompt("Intorduce o primeiro texto");
+            let segundoTexto = prompt("Introduce o segundo texto");
+
+            //Chamada
+            concatenaTextos(primeiroTexto, segundoTexto, sacarTextos);
+
+        </script>
+    </body>
+</html>

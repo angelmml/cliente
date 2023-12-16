@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio4
+        </title>
+    </head>
+    <body>
+        <script>
+/*
+Dado un array de longitud 9. Recorrer este array e imprimir con asteriscos
+el número presente en cada posicion.
+Debe:
+Cargarse el array con numeros que pueden ser aleatorios.
+Los numeros solo deberán ser del 1 al 50.
+*/
+
+            
+           let array = [];
+
+           for (let i = 0; i < 9; i++){
+            array.push(Math.floor(Math.random()*50)+1);
+           }
+
+           for (let i = 0; i < array.length; i++){
+            let numero = array[i];
+            let asteriscos = '';
+            for (let j = 0; j < numero; j++){
+                asteriscos += '*';
+            }
+            document.write(asteriscos + "<br>");
+           }
+        </script>
+    </body>
+</html>

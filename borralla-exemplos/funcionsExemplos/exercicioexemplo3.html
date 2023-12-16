@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            //Crear una funcion que reciba como parametros un precio, 
+            //un porcentaje de descuento de ese precio y devuelva el nuevo precio.
+
+            // Pedimos os valores
+            let precio = parseFloat(prompt("Introduce o precio do producto: "));
+            let porcentaxe = parseInt(prompt("Introduce o desconto do producto"));
+            // Creamos a función e realizamos os cálculos nela.
+            function calculoDesconto(){
+                let desconto = (precio * porcentaxe)/100;
+                let resultado = precio - desconto;
+                return resultado;
+            }
+            // Mostramos o resultado
+            let prezoFinal = calculoDesconto()
+            console.log("O prezo final é " + prezoFinal + " euros.");
+        </script>
+    </body>
+</html>
