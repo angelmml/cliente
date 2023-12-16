@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio 4:
+            Converter un número romano introducido no seu equivalente arábigo.
+        </title>
+    </head>
+    <body>
+        
+          <script>
+            let numeroNormal = (prompt("Introduce un numero"));
+
+            let numArab = numeroNormal;
+
+            let numRomano = "";
+
+            let equivaleNormal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+
+            let equivaleRomano = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+
+
+            for (let i = 0; i<equivaleNormal.length; i++){
+                while (numeroNormal >= equivaleNormal[i]){
+                    numRomano = numRomano + equivaleRomano[i];
+                    numeroNormal -= equivaleNormal[i];
+                }
+            }
+
+
+            console.log(`O numero romano equivalente a ${numArab} é: ${numRomano}`);
+        </script>
+        
+    </body>
+</html>

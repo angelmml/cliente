@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<title>Ejercicio 2</title>
+
+<body> 
+       
+   
+    <script>
+
+        /*
+        Fusionar vectores ordenados: dados dous vectores ordenados, crear un terceiro vector que sexa a fusión de ambos
+        e que tamén estea ordenado.
+        a=1,2,4
+        b=3,5,6
+        resultado=1,2,3,4,5,6
+        */
+
+
+        var a = [1, 2, 4];
+        var b = [3, 5, 6];
+        var resultado = [];
+
+        let i = 0; //Indice para a
+        let j = 0; // Indice para b
+
+        // Fusionar vectores ordenados
+        while (i < a.length && j < b.length) {
+            if (a[i] < b[j]) {
+                resultado.push(a[i]);
+                i++;
+            } else {
+                resultado.push(b[j]);
+                j++;
+            }
+        }
+
+        // Engadir elementos
+        while (i < a.length) {
+            resultado.push(a[i]);
+            i++;
+        }
+
+        // Egadir elementos
+        while (j < b.length) {
+            resultado.push(b[j]);
+            j++;
+        }
+
+       console.log(`Resultado: [${resultado.join(", ")}]`);
+
+
+    </script>
+</body>
+
+</html>

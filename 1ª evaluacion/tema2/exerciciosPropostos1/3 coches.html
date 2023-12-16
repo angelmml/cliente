@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Choces</title>
+  </head>
+  <body>
+    <script>
+      class Coche {
+        constructor(color, modelo, capacidad) {
+          this.color = color;
+          this.modelo = modelo;
+          this.capacidad = capacidad;
+        }
+
+        verDatos() {
+          document.write(
+            `Color: ${this.color} - Modelo: ${this.modelo} - Capacidad: ${this.capacidad}<br>`
+          );
+        }
+      }
+
+      let cochesArray = [];
+
+      for (let i = 0; i < 2; i++) {
+        let color = prompt("Introduce el color del coche:");
+        let modelo = prompt("Introduce el modelo del coche:");
+        let capacidad = prompt("Introduce la capacidad:");
+        let coche = new Coche(color, modelo, capacidad);
+        cochesArray.push(coche);
+      }
+
+      for (let i = 0; i < 2; i++) {
+        cochesArray[i].verDatos();
+      }
+    </script>
+  </body>
+</html>

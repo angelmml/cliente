@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcos</title>
+</head>
+<body>
+    <script> 
+        class Barco { 
+            constructor(CV = "", orixe = "", destino = "", carga = "", cargamax = "") {
+                this.CV = CV;
+                this.orixe = orixe;
+                this.destino = destino;
+                this.carga = carga;
+                this.cargamax = cargamax;
+            }  
+            
+            zarpar() { 
+                console.log(`El barco sale de ${this.orixe}`);
+                console.log(`El barco va a ${this.destino}`);
+            }
+            
+            cargando(carga) { 
+                if (carga < this.cargamax) { 
+                    this.carga = carga + this.carga; 
+                    if (this.carga > this.cargamax){ 
+                        this.carga = this.carga - carga; 
+                        console.log("El barco no puede ser cargado, supera la carga máxima");
+                    }  
+                } else { 
+                    console.log("La carga supera la carga máxima, no puede cargarse");
+                }
+            }  
+
+            descargando(carga) { 
+                if (carga > this.carga) { 
+                    console.log("No puedes descargar tanto, no tienes tanta carga");
+                } else { 
+                    this.carga = this.carga - carga;
+                }
+            }
+
+            observador() { 
+                console.log(`La carga es ${this.carga}`); 
+                console.log(`El motor tiene ${this.CV} CV` ); 
+                console.log(`El puerto destino es ${this.destino}`); 
+                console.log(`El puerto origen es ${this.orixe}`); 
+            } 
+        } 
+
+        const barco = new Barco(300, "Vigo", "Vilagarcía", 1, 10000); 
+
+        barco.observador(); 
+
+        barco.cargando(250); 
+
+        barco.observador(); 
+
+
+        const barco2 = new Barco(300);
+
+        barco2.observador();
+    </script>
+</body>
+</html>

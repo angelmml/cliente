@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ejercicio 5
+        </title>
+    </head>
+    <body>
+        <script>
+            let array = [];
+
+            let suma = 0;
+            let media = 0;
+
+            for (let i = 0; i< 10; i++){
+                
+                let numero = parseInt(prompt("Introduce el número " + (i + 1) + ": "));
+
+                array.push(numero);
+
+                suma = suma + numero;
+            }
+
+            media = suma / array.length;
+
+            document.write("A suma é " + suma);
+            document.write("<br>");
+            document.write("A media é " + media); 
+        </script>
+    </body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <title>Ejercicio 1</title>
+
+  <body>
+    <h4>Ejercicio 1</h4>
+
+    <script>
+      /* 1. Crear un programa que lance un menú que faga o seguinte: a- Crear un
+         conxunto vacío. Indicar o conxunto a crear. Por exemplo: libros. b-
+         Eliminar un conxunto. Indicar o conxunto a eliminar. Por exemplo: libros.
+         c- Crear un conxunto coa unión de dous conxuntos. Unir os dous en un. d-
+         Crear un conxunto ca intersección de dous conxuntos (só os elementos que
+         están nos dous conxuntos). e- Introducir un elemento no conxunto indicado.
+         f- Eliminar un elemento do conxunto indicado. g- Saír.
+         */
+
+      // Inicializamos un obxecto para almacenar os conxuntos
+      const conxuntos = {};
+
+      // Función para crear un conxunto vacío
+      function crearConxunto(nomeConxunto) {
+        conxuntos[nomeConxunto] = new Set();
+        document.write(`Conxunto "${nomeConxunto}" creado.`);
+      }
+      // Función para eliminar un Conxunto
+      function eliminarConxunto(nomeConxunto) {
+        if (conxuntos[nomeConxunto]) {
+          delete conxuntos[nomeConxunto];
+          document.write(`Conxunto "${nomeConxunto}" eliminado.`);
+        } else {
+          document.write(`O Conxunto "${nomeConxunto}" non existe.`);
+        }
+      }
+      // Función para unir dous conxuntos nun
+      function unirconxuntos(nomeConxunto1, nomeConxunto2) {
+        if (conxuntos[nomeConxunto1] && conxuntos[nomeConxunto2]) {
+          const ConxuntoUnido = new Set([
+            ...conxuntos[nomeConxunto1],
+            ...conxuntos[nomeConxunto2],
+          ]);
+          document.write(`Conxunto unido creado.\n`);
+          document.write(
+            `Conxunto Unión: [${Array.from(ConxuntoUnido).join(", ")}]`
+          );
+        } else {
+          document.write(`Algun dos conxuntos non existe.`);
+        }
+      }
+
+      // Función para encontrar a interseccion dos conxuntons
+      function interseccionconxuntos(nomeConxunto1, nomeConxunto2) {
+        if (conxuntos[nomeConxunto1] && conxuntos[nomeConxunto2]) {
+          const ConxuntoInterseccion = new Set(
+            [...conxuntos[nomeConxunto1]].filter((element) =>
+              conxuntos[nomeConxunto2].has(element)
+            )
+          );
+          document.write(`Conxunto intersección creado.\n`);
+          document.write(
+            `Conxunto Intersección: [${Array.from(ConxuntoInterseccion).join(
+              ", "
+            )}]`
+          );
+        } else {
+          document.write(`Aglud dos conxuntos non existe.`);
+        }
+      }
+
+      // Función para agregar un elemento a un conxunto
+      function agregarElemento(nomeConxunto, elemento) {
+        if (conxuntos[nomeConxunto]) {
+          conxuntos[nomeConxunto].add(elemento);
+          document.write(
+            `Elemento "${elemento}" agregado al Conxunto "${nomeConxunto}".`
+          );
+        } else {
+          document.write(`El Conxunto "${nomeConxunto}" no existe.`);
+        }
+      }
+
+      // Función para eliminar un elemento dunc onxunto
+      function eliminarElemento(nomeConxunto, elemento) {
+        if (conxuntos[nomeConxunto]) {
+          if (conxuntos[nomeConxunto].has(elemento)) {
+            conxuntos[nomeConxunto].delete(elemento);
+            document.write(
+              `Elemento "${elemento}" eliminado do conxunto "${nomeConxunto}".`
+            );
+          } else {
+            document.write(
+              `O elemento "${elemento}" no existe no conxunto"${nomeConxunto}".`
+            );
+          }
+        } else {
+          document.write(`O Conxunto "${nomeConxunto}" non existe.`);
+        }
+      }
+
+      // Menú de operacions
+      let opcion;
+      while (opcion !== "g") {
+        opcion = prompt(
+          "Menú de operacions:\n a- Crear Conxunto\n b- Eliminar Conxunto\n c- Unir conxuntos\n d- Intersección de conxuntos\n e- Agrega elemento\n f- Elimina elemento\n g- Sair\n"
+        );
+
+        switch (opcion) {
+          case "a":
+            const nomeConxunto = prompt("Ingresa o nome do conxunto a crear:");
+            crearConxunto(nomeConxunto);
+            break;
+          case "b":
+            const ConxuntoEliminar = prompt(
+              "Ingresa o nome do conxunto a eliminar:"
+            );
+            eliminarConxunto(ConxuntoEliminar);
+            break;
+          case "c":
+            const nomeConxunto1 = prompt("Ingresa o nome do primero conxunto:");
+            const nomeConxunto2 = prompt("Ingresa o nome do segundo conxunto:");
+            unirconxuntos(nomeConxunto1, nomeConxunto2);
+            break;
+          case "d":
+            const ConxuntoInterseccion1 = prompt(
+              "Ingresa o nome do primero conxunto:"
+            );
+            const ConxuntoInterseccion2 = prompt(
+              "Ingresa o nome do segundo conxunto:"
+            );
+            interseccionconxuntos(ConxuntoInterseccion1, ConxuntoInterseccion2);
+            break;
+          case "e":
+            const nomeConxuntoAgregar = prompt("Ingresa o nome do conxunto:");
+            const elementoAgregar = prompt("Ingresa o elemento a agregar:");
+            agregarElemento(nomeConxuntoAgregar, elementoAgregar);
+            break;
+          case "f":
+            const nomeConxuntoEliminar = prompt("Ingresa o nome do conxunto:");
+            const elementoEliminar = prompt("Ingresa o elemento a eliminar:");
+            eliminarElemento(nomeConxuntoEliminar, elementoEliminar);
+            break;
+          case "g":
+            document.write("Saindo do programa.");
+            break;
+          default:
+            document.write(
+              "Opción non válida. Por favor, ingresa unha opción válida."
+            );
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+  <title>Exericio2</title>
+
+  <body>
+    <script>
+
+        /*
+
+        Crea unha función que reciba un array de palabras. A función devolverá un mapa que
+        conteña como clave cada palabra e o valor do mapa será o número de veces que esa palabra
+        aparece no array. Debemos ler as plabras ata que o usuario cancele dunha forma que ti
+        decidas. Unha vez acabe de cargar, amosaremos as repeticións das palabras no array. 
+
+        */
+      // Función para contar as repeticións das palabras nun array
+      function contarRepeticionsPalabras(arrayPalabras) {
+        var mapaRepeticions = new Map();
+        // Contar repeticións das palabras
+        for (var i = 0; i < arrayPalabras.length; i++) {
+          var palabra = arrayPalabras[i];
+          if (mapaRepeticions.has(palabra)) {
+            mapaRepeticions.set(palabra, mapaRepeticions.get(palabra) + 1);
+          } else {
+            mapaRepeticions.set(palabra, 1);
+          }
+        }
+        return mapaRepeticiones;
+      }
+      // Función para ler palabras hasta que el usuario cancele
+      function lerPalabras() {
+        var palabras = [];
+        var continuar = true;
+        while (continuar) {
+          var palabra = prompt(
+            "Introduce unha palabra (ou cancela para terminar):"
+          );
+          if (palabra === null) {
+            continuar = false;
+          } else {
+            palabras.push(palabra);
+          }
+        }
+        return palabras;
+      }
+      // Chamar á función para ler palabras
+      var arrayPalabras = leerPalabras();
+      // Chamar á función para contar a repetición das palabras
+      var mapaRepeticions = contarRepeticionsPalabras(arrayPalabras);
+      // Amosar as repeticións das palabras nun array.
+      console.log("Repeticións das palabras no array:");
+      for (var [palabra, repeticions] of mapaRepeticions) {
+        console.log(palabra + ": " + repeticions);
+      }
+    </script>
+  </body>
+</html>

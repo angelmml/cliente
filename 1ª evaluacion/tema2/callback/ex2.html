@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
+            Programa que chame dende unha función a outra para validar
+            un código postal e comprobe a provincia de España a que
+            pertence ese código (dous primeiros números).
+            O programa principal lanza a función que devolverá solo o 
+            nombre da provincia do código postal, pasado a la función.
+            */
+
+      let codPost = parseInt(
+        prompt("Introduce el código postal de una provincia: ")
+      );
+
+      let estado = new Map([
+        [01, "Alava"],
+        [02, "Albacete"],
+        [03, "Alicante"],
+        [04, "Almeria"],
+        [05, "Avila"],
+        [06, "Badajoz"],
+        [07, "Baleares"],
+        [08, "Barcelona"],
+        [09, "Burgos"],
+        [10, "Cáceres"],
+        [11, "Cádiz"],
+        [12, "Castellón"],
+        [13, "Ciudad Real"],
+        [14, "Cordoba"],
+        [15, "La Coruña"],
+        [16, "Cuenca"],
+        [17, "Gerona"],
+        [18, "Granada"],
+        [19, "Guadalajara"],
+        [20, "Guipúzcua"],
+        [21, "Huelva"],
+        [22, "Huesca"],
+        [23, "Jaén"],
+        [24, "León"],
+        [25, "Lérida"],
+        [26, "La Rioja"],
+        [27, "Lugo"],
+        [28, "Madrid"],
+        [29, "Málaga"],
+        [30, "Murcia"],
+        [31, "Navarra"],
+        [32, "Orense"],
+        [33, "Asturias"],
+        [34, "Palencia"],
+        [35, "Las Palmas"],
+        [36, "Pontevedra"],
+        [37, "Salamanca"],
+        [38, "Santa Cruz de Tenerife"],
+        [39, "Cantabria"],
+        [40, "Segovia"],
+        [40, "Sevilla"],
+        [42, "Soria"],
+        [43, "Tarragona"],
+        [44, "Teruel"],
+        [45, "Toledo"],
+        [46, "Valencia"],
+        [47, "Valladolid"],
+        [48, "Vizcaya"],
+        [49, "Zamora"],
+        [50, "Zaragoza"],
+        [51, "Ceuta"],
+        [52, "Melilla"],
+      ]);
+
+      function getProvincia(codPost, callback) {
+        let primeirosNumeros = Math.floor(codPost / 1000);
+        let provincia = estado.get(primeirosNumeros);
+        callback(provincia || "Código erróneo.");
+      }
+
+      function amosarResultado(provincia) {
+        console.log("Provincia: " + provincia);
+      }
+
+      getProvincia(codPost, amosarResultado);
+    </script>
+  </body>
+</html>

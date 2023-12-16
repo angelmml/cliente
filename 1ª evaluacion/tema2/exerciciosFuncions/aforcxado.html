@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Exercicio2</title>
+
+</head>
+<body>
+    <script defer>
+        let letra = "";
+        let acertos = []
+        let palabra_secreta = "ESPIA"
+        let intentos = 0
+        let intentos_restantes = 6
+
+        //Creación de un array para posteriormente escribir a Palabra de maneira oculta.
+        for(let i = 0; i < palabra_secreta.length; i++){
+            // Escritura do array coa palabra oculta
+            if(palabra_secreta[i] == " "){
+                // En caso de na palabra haber espacios, introducimos un espacio no array para mellorar a claridade
+                acertos[i] = " " 
+            }else{
+                // En caso de ser unha letra, introducimos unha barra biaxa: _
+                acertos[i] = "_" 
+            }      
+        }
+
+        // Execución principal do programa
+        do{
+            //Imprimir o estado do array, co obxectivo de que o usuario poida ver a cantidade de letras antes de adiviñar
+            imprimirEstado();
+            //Recepción de datos do usuario mediante prompt.
+            do{
+                letra = prompt("Introduce unha letra para adiviñar: ")
+            }while(letra.length > 1 || !isNaN(parseInt(letra))) // Comprobación dos datos introducidos polo usuario
+            
+            // Reducción do número de intentos en caso de non atopar a letra na palabra
+            if(!ahorcado()){
+                intentos_restantes --;
+            }
+
+            // Comprobar se a letra se acertou, xa que nese caso parariase a execución, e a impresión de estado inicial non tería lugar
+            if(palabraAcertada()){
+                imprimirEstado();
+            }
+        }while(!palabraAcertada() && intentos_restantes > 0); // Funcionamento do xogo ata que non queden intentos ou a palabra sexa acertada
+
+        // Función que comproba se a letra introducida se atopa na palabra oculta
+        function ahorcado(){
+            let indice = -1
+            let contador = 0
+            let letra_correcta = 0;
+
+            do{
+                // Comprobar se a letra introducida se atopa na palabra
+                if(palabra_secreta[contador] == letra.toLocaleUpperCase()){
+                    indice = contador;
+                }
+
+                // En caso de atoparse a letra na palabra, introducese a letra no array 
+                if(indice!= -1){
+                    acertos[indice] = letra.toLocaleUpperCase()
+                    letra_correcta++
+                }
+
+                indice = -1
+                contador++
+            }while(contador < palabra_secreta.length)
+
+            //comprobación mediante unha variable de que a letra introducida se atopou polomenos 1 vez na palabra
+            if(letra_correcta >= 1){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        // Función que indica se a a palabra foi acertada
+        function palabraAcertada(){
+            for(let i = 0; i < palabra_secreta.length ;i++){
+                // Comprobamos letra por letra que o array no que se introducen as letras sexa igual a palabra oculta 
+                if(!(acertos[i] == palabra_secreta[i])){
+                    return false
+                }
+            }
+
+            return true;
+        }
+
+        // Función que imprime a situación actual da palabra, tendo en conta que letras foron acertadas.
+        function imprimirEstado(){
+            let imprimir_acertos = ""
+            // Escritura do array a unhavariable co obxectivo de realizar a impresión da palabra ocultada de unha soa vez
+            for(let i = 0; i < acertos.length; i++){
+                imprimir_acertos += `${acertos[i]} `
+            }
+            // Impresión da variable xerada
+            console.log(`${imprimir_acertos}`)
+        }
+    </script>
+</body>
+</html>

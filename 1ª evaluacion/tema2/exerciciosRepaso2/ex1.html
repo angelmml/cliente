@@ -1,0 +1,29 @@
+<html>
+  <title>Ex1</title>
+
+  <body>
+    <script>
+      // Funcion que xera un número aleatorio entre min e max
+      function xerarNumeroAleatorio(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      // Función para imprimir se un número é par ou impar
+      function imprimirParidade(numero) {
+        if (numero % 2 === 0) {
+          console.log(numero + " é par");
+        } else {
+          console.log(numero + " é impar");
+        }
+      }
+      // Xerar o array de números aleatorios
+      var numeros = [];
+      for (var i = 0; i < 500; i++) {
+        numeros.push(xerarNumeroAleatorio(1, 500));
+      }
+      // Pasasamos o array por referencia e imprimimimos
+      for (var i = 0; i < numeros.length; i++) {
+        imprimirParidade(numeros[i]);
+      }
+    </script>
+  </body>
+</html>

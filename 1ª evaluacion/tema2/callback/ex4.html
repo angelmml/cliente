@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Facer un proframa que reciba cadeas de texto nunha función
+            ata que o usuario decida parar de envialas, e que estas
+            cadeas se pasen a outra función creando un texto final.
+            */
+
+            function recibirCadenas(callback) {
+            //Creamos o array 
+            let cadenas = [];
+            let continuar = true;
+
+            // Bucle para recibir cadeas
+            while (continuar) {
+                let cadena = prompt("Introduce unha cadea de texto:");
+
+                if (cadena === null) {
+                    // Cancelada
+                    continuar = false;
+                } else {
+                    // Escrita
+                    cadenas.push(cadena);
+                }
+            }
+
+            // Chama ao callback
+            callback(cadenas);
+        }
+
+        function crearTextoFinal(cadenas) {
+            // Concatenar cadeas nun único texto
+            let textoFinal = "Texto Final: " + cadenas.join(" ");
+            console.log(textoFinal);
+        }
+
+        // Chama a funcion
+        recibirCadenas(crearTextoFinal);
+        </script>
+    </body>
+</html>

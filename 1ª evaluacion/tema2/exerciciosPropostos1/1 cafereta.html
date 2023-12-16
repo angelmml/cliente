@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cafetera</title>
+    <script>
+
+        class Cafetera {
+            constructor(maximo, actual) {
+                // Configuración inicial de la cafetera
+                this.capacidadMaxima = maximo || 1000;
+                this.cantidadActual = actual || 0;
+            }
+
+            llenarCafetera() {
+                // Llena la cafetera hasta su capacidad máxima
+                this.cantidadActual = this.capacidadMaxima;
+            }
+
+            servirTaza(cantidad) {
+                // Sirve una taza de café
+                if (cantidad > this.cantidadActual) {
+                    console.log(`La cafetera no tenía suficiente café. Se sirvió ${this.cantidadActual}ml`);
+                    this.cantidadActual = 0;
+                } else {
+                    console.log(`Se sirvió una taza de ${cantidad}ml`);
+                    this.cantidadActual -= cantidad;
+                }
+            }
+
+            vaciarCafetera() {
+                // Vacía la cafetera
+                this.cantidadActual = 0;
+            }
+
+            agregarCafe(cantidad) {
+                // Agrega café a la cafetera sin desbordar
+                if ((cantidad + this.cantidadActual) > this.capacidadMaxima) {
+                    console.log(`Se llenó hasta la capacidad máxima de la cafetera`);
+                    this.cantidadActual = this.capacidadMaxima;
+                } else {
+                    this.cantidadActual += cantidad;
+                    console.log(`Se agregaron ${cantidad}ml a la cafetera. Ahora tienes ${this.cantidadActual}ml de café`);
+                }
+            }
+
+            mostrarCafe() {
+                // Muestra la capacidad y cantidad actual de la cafetera
+                console.log(`Capacidad Máxima: ${this.capacidadMaxima}ml`);
+                console.log(`Cantidad Actual: ${this.cantidadActual}ml`);
+                console.log(" ");
+            }
+        }
+
+        // Comprobación del funcionamiento
+        let cafeteraVacia = new Cafetera();
+        let cafeteraCapMaxima = new Cafetera(500);
+        let cafeteraConCafe = new Cafetera(1500, 500);
+
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.llenarCafetera();
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.servirTaza(500);
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.vaciarCafetera();
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.agregarCafe(1500);
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.vaciarCafetera();
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.agregarCafe(500);
+        cafeteraVacia.mostrarCafe();
+        cafeteraVacia.servirTaza(1000);
+        cafeteraVacia.mostrarCafe();
+
+        cafeteraCapMaxima.mostrarCafe();
+        cafeteraConCafe.mostrarCafe();
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let libros = new Map();
+      libros.set("1", "La Caza");
+      libros.set("2", "La Colmena");
+
+      if (libros instanceof Map) {
+        document.write("tipo de objeto: mapa");
+        document.write("codigo , titulo");
+        for (let [codigo, titulo] of libros) {
+          document.write(` ${codigo}, ${titulo} `);
+        }
+      }
+
+      class xente {
+        dni;
+        nombre;
+
+        constructor(dni, nombre) {
+          this.dni = dni;
+          this.nombre = nombre;
+        }
+        observador() {
+          document.write(this.dni);
+          document.write(this.nombre);
+        }
+      }
+
+      let arraipersonas = [];
+      if (arraipersonas instanceof Array) {
+        for (let i = 0; i < 2; i++) {
+          nomepersona = prompt("Introduce o nome da persona");
+          dnipersona = prompt("Introduce o DNI");
+          let persona = new xente(nomepersona, dnipersona);
+          arraipersonas.push(persona);
+        }
+
+        for (let a = 0; a < arraipersonas.length; a++) {
+          document.write(arraipersonas[a].observador());
+        }
+      } else {
+        document.write("non é un array");
+      }
+
+      class pueblos {
+        pobo;
+        xente;
+        constructor(xente, pobo) {
+          this.pobo = pobo;
+          this.xente = xente;
+        }
+        observador() {
+          document.write(this.pobo);
+          document.write(this.xente);
+        }
+      }
+
+      let pobo = new pueblos(2, "Santa Comba");
+
+      if (pobo instanceof Object) {
+        pobo.observador();
+      } else {
+        document.write("non é un obxecto");
+      }
+    </script>
+  </body>
+</html>

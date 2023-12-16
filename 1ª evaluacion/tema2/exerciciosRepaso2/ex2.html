@@ -1,0 +1,35 @@
+<html>
+  <title>Exericio2</title>
+
+  <body>
+    <script>
+      /*
+    Crear unha función que recibe dous parámetros x e y e xere dentro da función un array de x
+    X y elementos que deberán ser impresos.
+    */
+
+    //Creams a funcion
+      function crear(x, y) {
+        //Iniciamso array
+        let arrai = [];
+        for (let i = 0; i < x; i++) {
+          arrai[i] = [];
+          for (let j = 0; j < y; j++) {
+            arrai[i][j] = 0;
+          }
+        }
+        return arrai;
+      }
+      //Damos valor
+      x = 3;
+      y = 4;
+      var show = crear(x, y);
+      for (let i = 0; i < x; i++) {
+        document.write("<br>");
+        for (let j = 0; j < y; j++) {
+          document.write(show[i][j]);
+        }
+      }
+    </script>
+  </body>
+</html>

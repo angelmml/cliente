@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
+            Facer un programa que conteña unha función que contemple como válido
+            ou non válido un salario que pasamos por parámetro e no caso de que 
+            válido farase unha tabla de incrementos para os seguintes 5 anos
+            do 1,05.
+            O salario non vai ser superior a 1600 euros ao mes
+            */
+
+      function validarSalario(salario, callbackValido, callbackInvalido) {
+        // Verificar salario valido
+        if (salario > 0 && salario <= 1600) {
+          // Chamada callback de salario válido
+          callbackValido(salario);
+        } else {
+          //Chamada callback de salario non válido
+          callbackInvalido("Salario no válido");
+        }
+      }
+
+      function generarTablaIncrementos(salario) {
+        console.log("Salario válido: " + salario);
+
+        //Xerar tabla de incrementos pos seguientes 5 años
+        for (let i = 1; i <= 5; i++) {
+          salario *= 1.05;
+          console.log("Año " + i + ": " + salario + " euros al mes");
+        }
+      }
+
+      function mostrarMensajeError(mensaje) {
+        console.error(mensaje);
+      }
+
+      //Uso
+      let salarioIngresado = parseFloat(prompt("Introduce el salario:"));
+
+      validarSalario(
+        salarioIngresado,
+        generarTablaIncrementos,
+        mostrarMensajeError
+      );
+    </script>
+  </body>
+</html>

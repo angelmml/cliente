@@ -1,0 +1,87 @@
+<html>
+  <title>Arrays</title>
+  <body>
+    <h1>Arrai Pila</h1>
+
+
+    <script>   
+
+    /*
+    Simula unha pila con un array.
+    Debe lanzarse o seguinte menú, do que seó se sairá se se pulsa a opción salir.
+    1.Insertar ao inicio un elemento na pila 
+    2.Insertar ao final un elemento na pila 
+    3.Eliminar elemento da pila aoinicio
+    4.Eliminar elemento da pila ao final 
+    5.Ver os elementos da pila en forma de pila 
+    6.Sair
+    */
+    
+    let menu = prompt("Menú: \n1.Insertar ao inicio un elemento na pila. \n2.Insertar ao final un elemento na pila. \n3.Eliminar elemento da pila ao inicio. \n4.Eliminar elemento da pila ao final. \n5.Ver os elementos da pila en forma de pila. \n6.Salir");
+    
+      var pila = [];
+
+    while (menu <= 6) {
+      switch (menu) {
+        case 1:
+            //Insertar elemento al inicio de la pila
+            let inicio = prompt("Escribe o elemento a insertar ao inicio da pila: ");
+            pila.unshift(inicio);
+        break;
+
+        case 2:
+            //Insertar elemento al final de la pila
+            let final = prompt("Escribe o elemento a insertar ao final da pila: ");
+            pila.push(final);
+        break;
+      
+        case 3:
+            //Eliminar elemento al inicio de la pila
+            if (pila.length > 0) {
+            pila.shift();
+            } else {
+            console.log("A pila está vacía. Non se pode eliminar.")
+            }        
+        break;
+        
+        case 4:
+            //Eliminar elemento al final de la pila
+            if (pila.length === 0) {
+                console.log("A pila está vacía.");
+            } else {
+                var elementoEliminadoFinal = pila.pop();
+                console.log(`Elemento '${elementoEliminadoFinal}' eliminado do final da pila.`);
+            }
+        break;
+
+        case 5:
+            //Ver os elementos da pila en forma de pila
+            if (pila.length === 0) {
+                console.log("A pila está vacía.");
+            } else {
+                console.log("Elementos na pila de arriba cara abaixo: ");
+                for (var i = pila.length - 1; i >= 0; i--) {
+                    console.log(pila[i]);
+                }
+            }
+        break;
+
+        case 6:
+        
+        break;
+
+        }
+        
+        
+    } console.log("Número introducido no está dentro del rango de números nombrados anteriormente.")
+
+   
+    
+    
+    
+    </script>
+
+
+
+  </body>
+</html>

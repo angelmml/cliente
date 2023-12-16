@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            let array = [1,2,-3,4,-5,6,0,-8,9,10];
+
+            let numPositivos = [];
+            let numNegativos = [];
+            let numCeros = [];
+
+            for (let i = 0; i< array.length; i++){
+                if (array[i] > 0){
+                    numPositivos.push(array[i]);
+                    }
+                else if(array[i] < 0){
+                    numNegativos.push(array[i]);
+                }else{
+                    numCeros.push(array[i]);
+                }
+            }
+
+            document.write("Vectores Positivos: " + numPositivos);
+            document.write("<br>Vectores Negativos: " + numNegativos);
+            document.write("<br>Iguales a Cero: " + numCeros);
+
+            document.write("<br>Positivos: " + numPositivos.length);
+            document.write("<br>Negativos: " + numNegativos.length);
+            document.write("<br>Ceros: " + numCeros.length);
+        </script>
+    </body>
+</html>
