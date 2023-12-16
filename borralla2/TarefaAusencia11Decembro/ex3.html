@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Recorre una matriz de objetos JSON y muestra una
+            propiedad específica de cada objeto en pantalla.
+            */
+           function mostrarPropiedades(mat, columna) {
+            for (var i = 0; i < mat.length; i++) {
+                document.write(mat[i][columna] + "<br />");
+                }
+                }
+                // Crea unha matriz con 3 filas e 2 columnas
+                var x = [{"Nome": "Rufino","Apelido": "Tragallantas", "Edad": 15},
+                        {"Nome": "Maria", "Apelido": "Cuétara", "Edad": 33},
+                        {"Nome": "Pedro", "Apelido":"Picapiedra", "Edad": 4}];
+                        // Mostra a propiedade Nome dos obxectos da matriz x
+                        mostrarPropiedades(x, "Nome");
+        </script>
+    </body>
+</html>

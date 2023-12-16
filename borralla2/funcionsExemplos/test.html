@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+       function addArray(arr, callback) {
+  // Inicializa la suma
+  let sum = 0;
+
+  // Itera sobre la matriz
+  for (let i = 0; i < arr.length; i++) {
+    // Aplica la función de devolución de llamada al elemento actual
+    sum += callback(arr[i]);
+  }
+
+  // Devuelve la suma total
+  return sum;
+}
+
+    </script>
+  </body>
+</html>

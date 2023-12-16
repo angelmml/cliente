@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+      /*
+            Crear un objeto llamado cuenta bancaria que contenga los atributos:
+            propietario y saldo.
+            Métodos sacar dinero, ingresar dinero.
+            Debe comprobar que hay dinero suficiente para sacar cuando se haga una retirada.
+        */
+      class Cuenta {
+        constructor(propietario, saldo) {
+          this.propietario = "Juan";
+          this.saldo = 100;
+        }
+        sacarDinero() {
+          let cantidadSacar = prompt("Cuánto quieres sacar?");
+          cantidadSacar = parseFloat(cantidadSacar); // Convertir a número
+          if (cantidadSacar <= this.saldo) {
+            console.log("Se han sacado " + cantidadSacar + " euros.");
+            this.saldo -= cantidadSacar;
+          } else {
+            console.log("No hay suficiente dinero en la cuenta");
+          }
+        }
+        ingresarDinero() {
+          let cantidadIngresar = prompt("Cuánto quieres ingresar?");
+          this.saldo += parseFloat(cantidadIngresar); // Convertir a número
+          console.log(
+            "Se ha ingresado " + cantidadIngresar + " euros a tu cuenta"
+          );
+        }
+
+        dineroTotal() {
+          let dineroActual = this.saldo;
+          console.log("Tu saldo es de: " + dineroActual + " euros");
+        }
+      }
+
+      var cuentaBancaria = new Cuenta("Juan", 100);
+
+      cuentaBancaria.sacarDinero();
+      cuentaBancaria.ingresarDinero();
+      cuentaBancaria.dineroTotal();
+    </script>
+  </body>
+</html>

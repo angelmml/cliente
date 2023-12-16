@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercicio 1
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Crea un menú onde o usuario poida escoller entre a seguintes accións:
+            a) Cargar alumnos.
+            b) Eliminar un alumno.
+            c) Agregar nota a un alumno.
+            d) Borrar nota a un alumno
+            e) Sair
+
+            Para a realización do exercicio deben terse as seguintes consideracións.
+            • Só se pode usar arrays para gardar os alumnos e as súas notas. O normal é usar un
+            array bidimensional. 
+            • Só se sae do menú se se pulsar a opción saír.
+            */
+
+
+            // Pedimos ao usuario que seleccione o que queira facer:
+            let opcion = prompt("Selecciona a túa opcion: 1 Cargar alumnos. 2 Eliminar alumno. 3. Agregar nota a un alumno. 4. Borrar nota a un alumno. 5 Saír.");
+
+            // Iniciamos o array
+            var datos = [];
+
+            //Creamos o switch coas opcions
+
+            switch (opcion){
+
+                case 1:
+
+                // MOstramos os alumnos
+                    console.log("Datos");
+                    console.log(datos);
+                    break;
+                case 2:
+                // Borramos o elemento
+                    let eliminar = prompt("O número do alumno a eliminar:");
+                    if (eliminar >=0 && eliminar <= datos.length){
+                        datos.splice(eliminar, 1);
+                    }else{
+                        console.log("Non existe o elemento")
+                    }
+                    break;
+                case 3:
+                    
+                    let agregar = prompt("Agrega a nota ao alumno");
+                    array.push(agregar);
+                    break;
+                case 4:
+                    let borrar = prompt("Borra a nota do alumno");
+                    array.splice(borrar);
+                    break;
+                case 5:
+                    console.log("Sair")
+                    break;
+                default:
+                    console.log("Opción non válida");
+            }
+        </script>
+    </body>
+</html>

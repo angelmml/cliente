@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    Exercicio 3
+  </head>
+  <body>
+    <script>
+        //Pedimos os días, horas e minutosa
+
+        let dias = parseInt(prompt("Introduce os días"));
+        let horas = parseInt(prompt("Introduce as horas"));
+        let minutos = parseInt(prompt("Introduce os minutos"));
+
+
+        //Calculamos
+        let diasASegundos = dias * 24 * 60* 60;
+        let horasASegundos = horas * 60 *60;
+        let minutosASegundos = minutos * 60;
+
+
+        let totalSegundos = diasASegundos + horasASegundos + minutosASegundos;
+    
+        // MOstramos o resultado
+
+        console.log(`O tempo total é de ${totalSegundos} segundos.`);
+    </script>
+  </body>
+</html>

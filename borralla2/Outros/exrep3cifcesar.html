@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cifrado César
+        </title>
+    </head>
+    <body>
+        <script>
+/*
+Dada unha cadena cifrala con algoritmo César.
+Teremos que pedir a clave de desplazamento dos caracteres e
+substituír todos os caracteres polos desplazadas.
+Exemplo: Ana
+Clave: 1
+Desplázase unha posicion os caracteres, o resultado sería:
+BmB*/
+
+            
+            let texto = (prompt("Introduce el texto a cifrar:"));
+            let cifrado ="";
+            let clave;
+
+            do{
+                clave = (prompt("Introduce o desplazamento:"));
+                if(isNaN(Number(clave))){
+                    alert("Debes introducir un numero")
+                }
+            }
+
+// mmostrar
+
+            console.log("O texto cifrado é: " + texto);
+        </script>
+    </body>
+</html>

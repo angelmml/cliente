@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Crea un programa que compruebe si una contraseña es compleja.
+            1º Debe tener una longitud de más de 8 carácteres.
+            2º Debea tener por lo menos una letra mayúscula.
+            3º Debe tener uno de los siguientes símbolos "-;,_:"
+            */
+
+            // Pedimos a contraseña ao usuario
+            var password = (prompt("Introduce a túa contraseña:"));
+
+            //Comprobamos se a contraseña cumple cos requisitos
+            if(password.length < 8){
+                console.log('1º A túa contraseña debe ter mais de oito caracteres');
+            }else{
+                console.log('1º A túa contraseña cumple o primeiro requeremento.')
+            }
+
+            //Comprobamos que conten as mayúsculas
+
+            var passwordMin = password.toLowerCase();
+
+            if (password === passwordMin){
+                console.log("Debe conter maiúsculas.")
+            }else{
+                console.log("2º Cumple co requeremento")
+            }
+
+
+            //Comprobamos que contén os símbolos
+            if(password.indexOf("-;,_:") != -1){
+                console.log("3º A contraseña debe conter símbolos especiais.");
+            }else{
+                console.log("3º A contraseña contén os símbolos especiais.")
+            }
+
+        </script>
+    </body>
+</html>

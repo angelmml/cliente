@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+        <script>
+            /*
+            Converte un obxecto JSON nun obxecto JavaScript e accede a unha das súas propiedades.
+            Imprime o resultado nun documento.
+            */
+
+            var astronomoJSON = '{"nome": "Nicolás", "apelido": "Copérnico", "edad": 33}';
+            var astronomo = JSON.parse(astronomoJSON);
+
+            console.log("Nome: " + astronomoJSON.nome);
+            console.log("Apelido: " + astronomoJSON.apelido);
+            console.log("Edad: " + astronomoJSON.edad);
+        </script>
+    </body>
+</html>
