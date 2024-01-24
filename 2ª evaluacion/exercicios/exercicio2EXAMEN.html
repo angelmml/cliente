@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        /*Partindo dun obxecto json cos seguintes datos:
+        nome:pepe
+        apelidos:juan
+        idade:34
+        convertilo a un obxecto de js.
+        Antes de imprimir engade,medi8ante patrons unha nova funcion a ese
+        obxecto chamada verInfo para imprimir os datos do obxecto Json
+        A continuacion,crea un array para engadir 2 persoas novas.
+        Sera necesario unha nova función engadirDatos(nome,apelidos,idade)
+        Finalmente,recorre o array e imprime os datos das persoas da seguinte forma:
+        Persoa 1:
+        imprime todos os datos da persoa1
+        Persoa 2:
+        imprime todos os datos da persoa2
+        */
+
+
+        //Creamos o obxeto json
+        var persona = '{"nome":"Pepe", "apelidos":"Sanchez", "idade":"34"}';
+
+
+        //Pasamolo de json a objeto
+        var person = JSON.parse(persona);
+
+
+        //Creamos dos funciones, para engadir datos e para ver a info
+        person.engadirDatos = function (nome, apelidos, idade) {
+            this.nome = nome;
+            this.apelidos = apelidos;
+            this.idade = idade;
+
+
+        }
+        person.verInfo = function () {
+            document.write(this.nome + "<br>");
+            document.write(this.apelidos + "<br>");
+            document.write(this.idade + "<br>");
+
+
+        }
+
+
+        //Comprobamos a informacion
+        person.verInfo();
+
+
+        //Creamos un array para añadir dous obxetos
+        var personas = [];
+
+
+        //Creamos dous obxetos cun for e pedindo os datos por pantalla
+        for (var i = 0; i < 2; i++) {
+            var nuevaPersona = Object.create(person);
+            nome = prompt("introduce o nome");
+            apelidos = prompt("introduce o apelido");
+            idade = prompt("idade");
+            nuevaPersona.engadirDatos(nome, apelidos, idade);
+            personas.push(nuevaPersona);
+        }
+        //Sacamos a informacion dos dous obxetos creados anteriormente
+        for (var i = 0; i < 2; i++) {
+            document.write("Persona: " + (i + 1) + "<br>" + "<br>");
+            personas[i].verInfo();
+        }
+
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+     /*
+        Crear un prototipo para almacenar informacion sobre
+        traballos realizados por unha empresa de fontanería.
+        Inicialmente:
+        Descripción do traballo.
+        Nº de horas.
+        Precio das horas.
+        IVA.
+        Función que calcule o precio final do traballo realizado.
+        Crear un traballo con valores solicitados por pantalla.
+        Imprimir datos completos do traballo co precio final.
+        Engadir un novo atributo para engadir a data de pago.
+        Imprimir de novo o resultado.
+     */
+    function Traballo(descripcion, horas, precioHora,iva){
+        this.descripcion = descripcion;
+        this.horas = horas;
+        this.precioHora = precioHora;
+        this.iva=iva;
+        //Función que calcularia o precio total do traballo
+        this.calcularPrecioTotal = function(){
+            return (this.horas * this.precioHora) + ((this.horas*this.precioHora)/100)*this.iva;
+            }
+    }
+    //Solicitamos los valores por pantalla al usuario
+    var descripcion = prompt("Introduce a descripción del trabajo");
+    var horas = parseFloat(prompt("Introduce o número de horas traballadas"));
+    var precioHora = parseFloat(prompt("Introduce o prezo da hora"));
+    var iva = parseFloat(prompt("Introduce o % do IVA"));
+    //Creamos un objeto traballo1 cos valores introducidos
+    var traballo1 = new Traballo(descripcion, horas, precioHora, iva);
+    //Imprimo os datos do traballo
+    console.log("Descripción:"+traballo1.descripcion);
+    console.log("Horas trabajadas:"+traballo1.horas);
+    console.log("Precio por hora:"+traballo1.precioHora);
+    console.log("IVA:"+traballo1.iva+"%");
+    console.log("Precio Total:"+traballo1.calcularPrecioTotal);
+    //Engadir un novo atributo a traballo1 con prototype
+    console.log(Traballo.prototype);
+    Traballo.prototype.dataPago = prompt("Introduce a data de pago");
+    console.log("Data de Pago:"+traballo1.dataPago);
+
+    /*let traballo1 = new Traballo("Desatasque",2,20,21);
+    console.log(traballo1);*/
+   
+    </script>
+  </body>
+</html>
