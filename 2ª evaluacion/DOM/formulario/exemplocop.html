@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+body h2{
+    text-align: center;
+}
+form {
+  width: 300px;
+  margin: 0 auto;
+}
+
+input[type="text"], input[type="date"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="radio"] {
+  margin: 10px 5px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  color: white;
+  background-color: blue;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h2>DATOS DE IDENTIFICACIÓN</h2>
+
+<form > 
+  <input type="radio" id="dni" name="docType" value="dni" checked>
+  <label for="dni">DNI/NIF/NIE</label>
+  <input type="radio" id="passport" name="docType" value="passport">
+  <label for="passport">PASAPORTE</label>
+  <input type="text" id="docNum" name="docNum" placeholder="Número Documento">
+  <input type="text" id="surname" name="surname" placeholder="Primer Apellido">
+  <input type="date" id="dob" name="dob">
+  <button type="submit">Registrar</button>
+</form>
+
+</body>
+</html>
