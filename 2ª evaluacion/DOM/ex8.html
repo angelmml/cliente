@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <!--
+       Crea unha paxina que reciba un texto que debe ser concordante
+    cunha expresion regular para un dni. se o dni introducido foi
+    correcto, unha vez se pulsou validar, habera un panel abaixo
+    (rexion) que se poña azul e poña DNI correcto, no caso de que
+    sea incorrecto, a rexion porase en vermello co texto visible 
+    DNI incorrecto 
+    -->
+    <script>
+        function validaDNI() {
+            //Expresión regular para un DNI:
+            //Ltras
+            let letras = /^[A-Za-z]+$/;
+            //Números
+            let numeros = /^\d+$/;
+            //Letra final
+            let letraFinal = /^([TRWAGMYFPDXBNJZ])$/i;
+            var txtDNI = document.getElementById("txtDNI").value;
+            if (!letras.test(txtDNI.charAt(0)) || !numeros.test(txtDNI.slice(1))) {
+                alert('El primer carácter debe ser una letra');
+                return false;
+                } else if (!letraFinal.test(txtDNI.slice(-1))) {
+                    alert('La letra final debe estar entre T, R, W, A ... YZ');
+                    return false;
+                    } else if (txtDNI.length != 9) {
+  
+    </script>
+</body>
+
+</html>
