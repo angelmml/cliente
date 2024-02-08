@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+      #box {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        display: block;
+        border-radius: 5px;
+      }
+    </style>
+    <title>Exemplo</title>
+    <!-- agregando libreria jQuery -->
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+  </head>
+  <body>
+    <table id="idTabla">
+      <tr>
+        <th>Roma</th>
+      </tr>
+      <tr>
+        <td>Justiniano</td>
+      </tr>
+      <tr>
+        <td>Caligula</td>
+      </tr>
+      <tr>
+        <td>Augusto</td>
+      </tr>
+    </table>
+
+    <p id="p1">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci fugit
+      aliquam reprehenderit assumenda ipsum beatae quam. Facilis non cum minima
+      deleniti, animi odit quia possimus blanditiis minus numquam esse dolore!
+    </p>
+
+    <h2>
+      Hola mundo
+      <p>Maaachinote</p>
+    </h2>
+
+    <div id="box">
+      <h3>Gran estado de Nebraska</h3>
+    </div>
+    <img id="foto" src="imaxes/OIP.jpg" alt="100" />
+
+    <img id="foto2"src="imaxes/OIP.jpg" alt="101">
+    <script>
+      $("#idTabla th").css("background", "#ddd");
+
+      $("#p1").css("background", "rgb(14, 172, 0)");
+
+      $("#foto").css("border", "10px solid pink");
+
+      $("h2 p").css("background", "rgb(172, 172, 0)");
+
+      $("#foto").click(function (event) {
+        $("#foto").css({ width: "50%" });
+      });
+
+      //Insertar antes
+      $('<p>Test1</p>').insertBefore('#box');
+      $('#box').before('<p>Test2</p>');
+
+      //Insertar despois
+      $('<p>Test3</p>').insertAfter('#box');
+      $('#box').after('<p>Test4</p>');
+
+      //Adjuntar ao contenido
+      $('#box').append('<p>TestAppend</p>');
+      $('<p>TestAppend2</p>').appendTo('#box');
+
+      //Carga lenta
+      $('#box').fadeIn('slow');
+      
+
+      //Mostrar / ocultar
+      $('#box').show();
+      $('#box').hide();
+
+
+      
+      $("#box").hover(
+        function () {
+          $(this).animate({ width: "300px", height: "300px" });
+        },
+        function () {
+          $(this).animate({ width: "100px", height: "100px" });
+        }
+      );
+
+      $("#foto2").hover(
+        function(){
+          $(this).animate({width: "500px", height:"auto", opacity:"0.9"});
+        },
+        function(){
+          $(this).animate({width: "400px", height:"auto"});
+        }
+      )
+    </script>
+  </body>
+</html>
