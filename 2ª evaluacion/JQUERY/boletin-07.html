@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Ex5
+    </title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+ <style>
+       table,
+      th,
+      td {
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+ </style>
+</head>
+
+<body>
+
+<!--
+Partimos de dúas imaxes con unha dimension de 100*100.
+Ao pasar o rato por riba da primeira dobrase con animación a súa
+dimensión.
+
+Ao pasar o rato por riba da segunda, disminúe a metade a dimensión.
+-->
+
+<img id="foto2" style=" height: 100px; width: 100px;" src="imaxes/OIP.jpg" alt="101">
+<img id="foto1" style="height: 100px; width: 100px;" src="imaxes/OIP.jpg"/>
+<script>
+         $("#foto2").hover(
+        function () {
+          $("#foto2").animate({ width: "200px", height: "200px" });
+        },
+        function () {
+          $("#foto2").animate({ width: "100px", height: "100px" });
+        }
+      );
+
+      $("#foto1").hover(
+        function () {
+          $("#foto1").animate({ width: "50px", height: "50px" });
+        },
+        function () {
+          $("#foto1").animate({ width: "100px", height: "100px" });
+        }
+      );
+</script>
+
+</body>
+
+</html>

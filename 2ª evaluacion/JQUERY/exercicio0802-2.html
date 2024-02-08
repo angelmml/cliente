@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Ex5
+    </title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+ <style>
+       table,
+      th,
+      td {
+        border: 1px solid rgb(0, 0, 0);
+      }
+
+ </style>
+</head>
+
+<body>
+
+<!--
+    Partimos dunha taboa jquery na que insertaremos os datos
+    Debaixo dela teremos un input text, para recoller o texto e insertalo dentro de esa caixa
+-->
+<table id="idTabla">
+    <tr>
+      <th>Taboa de jquery</th>
+    </tr>
+  </table>
+        
+
+  <form id="formulario">
+    <input type="text" id="inputTexto" name="inputTexto">
+    <button type="submit">Enviar</button>
+    <button type="button" id="eliminar">Borrar</button>
+</form>
+
+
+
+<script>
+        $("#formulario").submit(function(event) {
+    event.preventDefault();
+    var texto = $("#inputTexto").val();
+    $("#idTabla").append("<tr><td> "+texto+" <\/td><\/tr>");
+});
+
+$("#eliminar").click(function(){
+    if ($("#idTabla tr").length > 1){
+    $ ("#idTabla tr:last").remove();
+}});
+</script>
+
+</body>
+
+</html>

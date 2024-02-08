@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Ex5
+    </title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+ <style>
+
+ </style>
+</head>
+<!-- 
+   2- Ocultar un elemento del DOM al hacer click en él. usando hide e show
+-->
+<body>
+    <h3 id="mensaje">Hazme clic para ocultarme</h3>
+    <h3 id="mensaje2">Hazme clic para ocultarme2</h3>
+    <script>
+        $("#mensaje").click(function(){
+            $(this).hide();
+            });
+            $("#mensaje2").click(function(){
+            $(this).show();
+            });
+    </script>
+</body>
+
+</html>
