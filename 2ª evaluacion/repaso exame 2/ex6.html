@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+    <script src="js/jquery-1.7.js"></script>
+</head>
+<body>
+    <!--
+        De forma simple y usando DOM:
+        Crear una web que cree una lista de tareas.
+        El boton + añade tareas que podremos incluír en un input.
+        Una vez añadidas, pasan a una lista <ul>. Cada tarea tendrá un
+        botón quitar y que sacará la tarea de la lista.
+        En el borrado, debemos usar un efecto fadeOut o animate.
+    -->
+    <h2>Lista de tareas</h2>
+
+<input type="text" id="tareaInput" placeholder="Nueva tarea">
+<button id="añadir">+</button>
+
+<ul id="listaTareas">
+</ul>
+
+<script>
+$(document).ready(function(){
+    $("#añadir").click(function(){
+        var tarea = $("#tareaInput").val();
+        if(tarea){
+            $("#listaTareas").append('<li>' + tarea + ' <button class="quitar">Quitar</button></li>');
+            $("#tareaInput").val("");
+        }
+    });
+
+    $("#listaTareas").on("click", ".quitar", function(){
+        $(this).parent().fadeOut(500, function(){
+            $(this).remove();
+        });
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<script>
+
+    //Utilizando intervalos cada 5 segundos abrir unha paxina web
+    //nunha ventana nova. Só debe abrir 10 ventanas a partir de ahi
+    //eliminamos o intervalo.
+    
+    var contador = 0;
+    setInterval(function(){
+        if (contador <= 10){
+            window.open("https://www.google.es");
+            contador++;
+            }else{
+                clearInterval(interval);
+                };
+                }, 1000);    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="js/jquery-1.7.js"></script>
+
+    <style>
+        #btn-imaxen{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #imaxen{
+            display:none;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <button id="btn-imaxen">Slide Down</button>
+        <button id="btn-imaxen2">Slide Up</button>
+
+
+        <img src="imaxes/OIP.jpg" id="imaxen">
+    </div>
+
+    <script>
+        $("#btn-imaxen").click(function(){
+            $("#imaxen").slideDown("slow", function(){
+
+            })
+        })
+
+        $("#btn-imaxen2").click(function(){
+            $("#imaxen").slideUp("slow", function(){
+
+            })
+        })
+    </script>
+</body>
+</html>

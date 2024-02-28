@@ -1,0 +1,57 @@
+<!-- Partimos du obxecto JSON coa seguinte estrutura: (Referencia, exercicio plantuka).
+EMPRESA.
+Nome: Amoso S.L
+CIF: G15133648
+Direccion: “Rúa Areal, 24. 15150. A Coruña”.
+Teléfono: 9817385444
+
+
+Converte este obxecto JSON a un obxecto Javascript e imprime os datos en un div que se verá con
+efecto fadeIn cando remate o proceso de impresión. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src='../../../jquery-1.7.js'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Exercicio 1</title>
+</head>
+<style>
+    div{display: none;}
+</style>
+<body>
+    <div id="datos"></div>
+
+
+    <script>
+        var empresa= {"Nome":"Alonso S.L.", "CIF":"G1513648", "Direccion":"Rúa Areal, 24. 15150. A Coruña",
+        "Teléfono":"9817385444"};
+
+
+        var empresaDT = JSON.parse(JSON.stringify(empresa));
+
+
+        empresaDT.guardarDatos= function(Nome, CIF, Direccion, Teléfono){
+            this.Nome= Nome;
+            this.CIF= CIF;
+            this.Direccion= Direccion;
+            this.Teléfono= Teléfono;
+        }
+
+
+        empresaDT.imprimirDatos= function(){
+            $("#datos").text(`${this.Nome};
+            ${this.CIF};
+            ${this.Direccion};
+            ${this.Teléfono}`);
+            $("#datos").fadeIn("slow").css({"display": "block"});
+        }
+
+
+       empresaDT.imprimirDatos();
+    </script>
+</body>
+</html>

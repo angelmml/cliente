@@ -28,31 +28,23 @@
         imprime todos os datos da persoa2
         */
 
-
         //Creamos o obxeto json
         var persona = '{"nome":"Pepe", "apelidos":"Sanchez", "idade":"34"}';
 
-
         //Pasamolo de json a objeto
         var person = JSON.parse(persona);
-
 
         //Creamos dos funciones, para engadir datos e para ver a info
         person.engadirDatos = function (nome, apelidos, idade) {
             this.nome = nome;
             this.apelidos = apelidos;
             this.idade = idade;
-
-
         }
         person.verInfo = function () {
             document.write(this.nome + "<br>");
             document.write(this.apelidos + "<br>");
             document.write(this.idade + "<br>");
-
-
         }
-
 
         //Comprobamos a informacion
         person.verInfo();

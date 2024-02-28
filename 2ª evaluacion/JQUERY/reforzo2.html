@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="js/jquery-1.7.js"></script>
+
+    <style>
+        #btn-imaxen{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #imaxen{
+            
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <button id="btn-imaxen">Oculta / Mostra a imaxe</button>
+
+        <img src="imaxes/OIP.jpg" id="imaxen">
+    </div>
+
+    <script>
+        var visible = true;
+        $("#btn-imaxen").click(function(){
+            if(visible){
+                $("#imaxen").fadeOut("slow", function(){
+                    visible = false;
+                });
+            } else {
+                $("#imaxen").fadeIn("slow", function(){
+                    visible = true;
+                });
+            }
+        });
+    </script>
+    
+</body>
+</html>

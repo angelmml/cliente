@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+</head>
+<body>
+<div id="datos"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var empresa = {"Nome": "Alonso S.L.", "CIF": "G1513648", "Direccion": "Rúa Areal, 24. 15150. A Coruña",
+        "Teléfono": "9817385444"};
+
+    var empresuka = Object.create(empresa);
+
+    empresuka.gardarDatos = function (Nome, CIF, Direccion, Teléfono) {
+        this.Nome = Nome;
+        this.CIF = CIF;
+        this.Direccion = Direccion;
+        this.Teléfono = Teléfono;
+    }
+
+    empresuka.imprimirDatos = function () {
+        $("#datos").append(`<div>${this.Nome}<br>${this.CIF}<br>${this.Direccion}<br>${this.Teléfono}</div>`);
+        $("#datos div:last-child").fadeIn("slow");
+    }
+
+    // Creación de las empresas
+    empresuka.imprimirDatos();
+
+    var empresas = [];
+
+    for (var i = 0; i < 2; i++) {
+        var nuevaEmpresa = Object.create(empresuka);
+        var Nome = prompt("Nome da empresa:");
+        var CIF = prompt("CIF da empresa");
+        var Direccion = prompt("Direccion da empresa");
+        var Teléfono = prompt("Telefono da empresa");
+        nuevaEmpresa.gardarDatos(Nome, CIF, Direccion, Teléfono);
+        empresas.push(nuevaEmpresa);
+    }
+
+    for (var i = 0; i < 2; i++) {
+        document.write("Empresa " + (i + 1) + ":<br/>")
+        empresas[i].imprimirDatos()
+    }
+
+
+</script>
+</body>
+</html>

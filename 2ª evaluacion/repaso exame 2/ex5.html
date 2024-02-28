@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios repaso 5</title>
+    <script src="js/jquery-1.7.js"></script>
+</head>
+<style>
+    body{
+        margin:0px;
+        background-color: black;
+        height:100vh;
+        width: 100vw;
+    }
+
+    #texto{
+        color: white;
+        width: fit-content;
+        height: fit-content;
+        margin:auto;
+        font-size: 25px;
+    }
+
+    #wrap{
+        height:100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+</style>
+<body>
+<!--
+    Crea unha páxina web que teña que indique que ao pulsar Alt-F12 podemos
+    colocar unha imaxe de fondo.
+    O texto ten que estar centrado na pantalla horizontal e verticalmente.
+    Ao indicar a pantalla será negra co texto indicado e cando o usuario non
+    pulse tecla, a imaxe se amose.
+    Web para imaces background de fondo: https://source.unsplash.com/random
+-->
+
+<div id="wrap">
+    <p id="texto">Pulsa Alt+F12</p>
+</div>
+
+<script>
+   document.addEventListener("keydown", function(event){
+    let tecla = event.key
+    if (tecla == "F12" && event.altKey){
+        document.querySelector("#wrap").style.backgroundImage = "url('imagen_fondo.jpg')"
+    }
+   })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ex3
+        </title>
+        <script src="/jquery-1.7.js"></script>
+        <!--
+        Crea unha páxina web que permita que cando se pulse un botón, despois de pasar 5 
+        segundos apareza un div en pantalla co nome CONTRA ATRÁS FINALIZADA, debe 
+        aparecer con efecto fadeIn.
+        -->
+    </head>
+    <body>
+        <button id="jensonButton">NON PULSAR</button><br/>
+        <div id="mensaje" style="display:none; text-align:center
+        ; font-size:33px; background-color: aquamarine;">PA QUE PULSAS
+        </div>
+        <script>
+            $(document).ready(function(){
+                $("#jensonButton").click(function(){
+                    setTimeout(function() {
+                        $("#mensaje").fadeIn("slow");}, 5000);
+                        });
+                        })
+        </script>
+
+    </body>
+</html>

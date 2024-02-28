@@ -1,0 +1,37 @@
+<!--
+    Añade una funcion al objeto Array que obtenga todos los numeros impares
+    del 0 al 100. Carga todos los numeros impares en un div que sera mostrado
+    una vez pasen cinco segundos.
+-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Ejercicio 2</title>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1>Numeros Impares do 0 a 100</h1>
+        <div id="numerosImpares"></div><br/>
+        <button onclick="obtenerNumeroImpar()">Obter Númereros</button>
+        <script>
+
+            Object.prototype.imparesDelCeroAlCien=function(){
+                let arr=[];
+                for(let i=0;i<=100;i++){
+                    if(i%2!=0)arr.push(i);
+                    }
+                    return this.impares=arr;
+                    };
+                    function obtenerNumeroImpar() {
+                        document.getElementById("numerosImpares").innerHTML = "";
+                        setTimeout(() => {
+                            document.getElementById("numerosImpares").appendChild(document.createTextNode(
+                                "Os números impares son: "+Array.prototype.imparesDelCeroAlCien().join(", ")
+                                ));
+                                }, 5000);
+                                }
+        </script>
+    </body>
+</html>
