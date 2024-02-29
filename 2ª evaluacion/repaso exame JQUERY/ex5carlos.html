@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src="js/jquery-1.7.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <p id="desaparece">Desaparasision!</p>
+    <p id="desaparece1">Desaparasision!</p>
+   
+    <p id="estenon">Mantense</p>
+    <p id="estenon1">Mantense</p>
+    <button id="boton">desaparision</button>  
+
+
+    <script>
+     let contador = true;
+    $("#boton").click(function(){  
+         if (contador) {
+         
+        $("#desaparece1").fadeOut();
+       
+        $("#estenon1").fadeOut();  
+        contador = false;
+         } else {    
+         
+         $("#desaparece1").fadeIn();
+         
+         $("#estenon1").fadeIn();
+        contador = true;
+          }
+        })        
+
+
+
+    </script>
+</body>
+</html>
