@@ -8,18 +8,34 @@
 </head>
 <body>
 <script>
-    /*Eliminar duplicados: escribe unha función que tome unha matriz e devolva 
+    /*
+    Repaso prototipos javascript:
+    Eliminar duplicados: escribe unha función que tome unha matriz e devolva 
     unha nova matriz sen elementos duplicados.*/
-    function eliminarDuplicados(matriz) {
-        let matrix = [];
-        for (let i of matriz){
-            if (!matrix.includes(i)){
-                matrix.push(i);
+    function eliminarDuplicados
+    (matriz) {
+        let novaMatriz = [];
+        for(let i of matriz){
+            if(!novaMatriz.includes(i)) {
+                novaMatriz.push(i);
                 }
                 }
-                return matrix;
+                return novaMatriz;
                 };
-                //Prueba da función
+                console.log(eliminarDuplicados([2,4,5,"Hola", "Adios","Hola"])); //[2,4, 5, "Hola","Adios"]
+                /*   Buscar elemento
+                Escribe una función que reciba una matriz y un elemento como parámetros y devuelve la posición do elemento
+                na matriz ou -1 se non está presente
+                */
+               function buscarElemento(elemento,
+               matriz){
+                for(let i in matriz)
+                if(matriz[i]==elemento)return parseInt(i);
+                else{return -1;}};
+                console.log(buscarElement(
+
+
+
     </script>
     
 </body>
