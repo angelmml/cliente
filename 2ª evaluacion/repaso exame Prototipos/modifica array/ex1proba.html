@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        Repaso prototipos javascript:
+        Eliminar duplicados: escribe unha función que tome unha matriz e devolva 
+        unha nova matriz sen elementos duplicados.
+        
+        Ejemplo uso prototipos:
+        ENGADINDO MÉTODOS AOS PATRÓNS:
+    
+        Partimos do patrón "Persona":
+    
+        function Persona(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+        }
+    
+        Creamos unha nova persona
+        var persona = new Persona("Juan", 30);
+    
+        // Engadimos un método en tempo de execución
+        Persona.prototype.saudar = function() {
+        console.log("Ola, o meu nome é " + this.nombre);
+        };
+    
+        persona.saudar(); // Output: Ola, o meu nome é Juan
+        */
+        // Función para eliminar duplic
+        function borraDuplicados(arr) {
+            let proba_array = [];
+            for (let i of arr) {
+                if (!proba_array.includes(i))
+                    proba_array.push(i);
+            }
+            return proba_array;
+            }
+            // Matrices con duplicados
+            const matrix1 = [2, 4, 5, 7];
+            const matrix2 = [2, 4,"Hola","Adiós"];
+            console.log(`Matrix sin dup
+            ${borraDuplicados(matrix1)}`);
+                console.log(`Matrix con dup${borraDuplicados(matrix2)}`);
+                /* Resolucióu final
+                Matrix sin dup[2, 4,
+                5, 7]
+                Matrix con dup[2, 4,
+                "Hola", "Adiós"]
+                */
+               
+    </script>
+
+</body>
+
+</html>

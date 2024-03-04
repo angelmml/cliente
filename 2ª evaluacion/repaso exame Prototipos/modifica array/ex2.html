@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+        Prototipos
+        Modifica array:
+
+        Ordenación personalizada: Implementa una funcion que ordena un matriz de
+        objetos por una propiedad específica. Ejemplo: números de mayor a menor.
+        */
+
+      let numeros = [15, 8, 42, 16, 4, 23];
+
+      Array.prototype.ordenar = function (propiedad) {
+        return this.sort(function (a, b) {
+          return b[propiedad] - a[propiedad];
+        });
+      };
+
+      let numerosOrdenados = numeros.ordenar('numero');
+      console.log(numerosOrdenados);
+
+    </script>
+  </body>
+</html>

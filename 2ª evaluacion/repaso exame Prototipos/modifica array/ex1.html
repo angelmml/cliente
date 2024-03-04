@@ -1,42 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-<script>
-    /*
+  </head>
+  <body>
+    <script>
+      /*
     Repaso prototipos javascript:
-    Eliminar duplicados: escribe unha función que tome unha matriz e devolva 
-    unha nova matriz sen elementos duplicados.*/
-    function eliminarDuplicados
-    (matriz) {
-        let novaMatriz = [];
-        for(let i of matriz){
-            if(!novaMatriz.includes(i)) {
-                novaMatriz.push(i);
-                }
-                }
-                return novaMatriz;
-                };
-                console.log(eliminarDuplicados([2,4,5,"Hola", "Adios","Hola"])); //[2,4, 5, "Hola","Adios"]
-                /*   Buscar elemento
-                Escribe una función que reciba una matriz y un elemento como parámetros y devuelve la posición do elemento
-                na matriz ou -1 se non está presente
-                */
-               function buscarElemento(elemento,
-               matriz){
-                for(let i in matriz)
-                if(matriz[i]==elemento)return parseInt(i);
-                else{return -1;}};
-                console.log(buscarElement(
+    Eliminar duplicados: escribe unha función que tome unha matriz y devuelva 
+    una nueva matriz sin elementos duplicados.
+    */
+      let numeros = [1, 2, 3, 8, 5, 6, 2, 8, 1, 9];
+      Array.prototype.sinDuplicar = function () {
+        let arrayLimpo = [];
+        for (let i = 0; i < this.length; i++) {
+          if (arrayLimpo.indexOf(this[i]) === -1) {
+            arrayLimpo.push(this[i]);
+          }
+        }
+        return arrayLimpo;
+      };
 
-
-
+      console.log(numeros.sinDuplicar());
     </script>
-    
-</body>
+  </body>
 </html>
