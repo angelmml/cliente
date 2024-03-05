@@ -10,23 +10,15 @@
 <script>
     /*Contar vocales: crea una función que cuente cuantas vocales hay en una cadena de texto.
     debemos usar prototipos*/
+    const cadena = "Cadena para contar vocales";
     String.prototype.contarVocales= function () {
-        let contador = 0;
-        const vocales = "aeiou";
-        for (let i = 0; i
-        < this.length; i++) {
-            if(vocales.includes(this.charAt(i).toLowerCase
-            ())) contador++;
-            }
-            return contador;
-            };
-            
-            const miCadena = "Holacómo estás?".normalize("NFC");
-            console.log(`La cadena tiene ${miCadena.contarVocales()} vocales.`);
-            
-            class MiClase extends String{};
-            const miObjeto = new MiClase("Hola cómo estás?").normalize("NFD");
-            console.log(`El objeto tiene ${MiClase.prototype.contarVavocales.call(miObjeto)} vocales`);
+        let vocales = 0;
+        for (let i = 0; i<this.length; i++){
+            const caracter = this(i).toLowerCase();
+            if(caracter === "a" || caracter === "b" || caracter === "")
+        }
+    }
+
 
 </script>
     
