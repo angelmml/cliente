@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Ex5
+    </title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+ <style>
+
+ </style>
+</head>
+<!-- 
+    1- Cambiar o elemento dun párrafo por outro. (Partimos de un texto inicial)
+-->
+<body>
+    <p id="parrafo">Parrafo inicial.</p>
+
+    <form id="formulario">
+        <input type="text" id="inputTexto" name="inputTexto">
+        <button type="button">Cambio parrafo</button>
+    </form>
+    <script>
+    $("#formulario").submit(function(event) {
+    event.preventDefault();
+    var texto = $("#inputTexto").val();
+    $("#parrafo").text(texto);
+});
+    </script>
+</body>
+
+</html>

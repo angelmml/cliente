@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exercicio repaso</title>
+</head>
+
+<body>
+  <script>
+    /*
+    Crear expresións regulares para:
+    Recibir exclusivamente numeros de 0 a 4.
+    Recibir exclusivamente cadeas que comecen por maiúscula.
+    Recibir exclusivamente cadeas que remanten por "dw".
+    Impedir que se reciban números que conteñan 0.
+    */
+
+    //Expresion que solo acepte numeros de 0 a 4
+    let erNumero = new RegExp(/^[1-4]$/);
+    console.log(erNumero.test("33"));
+    console.log(erNumero.test("3"));
+
+    //Expresión que solo permita que as cadenas comencen por mayuscula
+    let erMayus = new RegExp(/^([A-Z])/);
+    console.log(erMayus.test("Anxo"));
+    console.log(erMayus.test("manuel"));
+
+    //Expresion para recibir cadenas que finalicen por "dw"
+    let erRemate = new RegExp(/(.*)dw$/);
+    console.log(erRemate.test("DEw"));
+    console.log(erRemate.test("dw"))
+
+    //Impedir que se reciban numeros que contengan 0
+    let expresion
+
+
+    //Expresion para comprobar un dni
+    let nif = /^[0-9]{8}[a-z]{1}$/i;
+    console.log(nif.test("78556689L"));
+
+    //Expresion regular para comprobar o cif dunha empresa
+    let cif = /^[A-Z]{1}[0-9]{8}$/;
+    console.log(cif.test("A87878787"));
+
+    //Expresion regular para validar un codigo postal español
+    let cp = /^[0-9]{5}$/;
+    console.log(cp.test(15840));
+
+    //Expresion regular que no permita usar números
+    let sinNumeros = /^[^0-9]+$/;
+    console.log(sinNumeros.test("POW-"));
+
+    //Expresion regular para validar un email sin abreviaturas
+    let mail = /^[a-z0-9.]+@[a-z0-9.]+\.[a-z]{2-4}$/i;
+    console.log(mail.test("anxo@gmail.com"));
+
+    //Crea unha funcion que valide unha paxina web http ou https://laxe.org
+    //a solicite por pantalla, a pase por parámetro esta funcion e envíe unha
+    //mensaxe de que a direccion e correcta ou  non é correcta, debemos usar
+    //expresions regulares.
+let dirweb= /^http(s)?:\/\/(www\.)?[a-zA-Z0-9.-]+[\a-z]{2,4}$/;
+let direccion = prompt("Introduce a web:");
+console.log(dirweb.test(direccion));
+  </script>
+</body>
+
+</html>

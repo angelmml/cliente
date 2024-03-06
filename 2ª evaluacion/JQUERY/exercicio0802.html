@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Ex5
+    </title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+    <style>
+             #box {
+        width: 250px;
+        height: 250px;
+        background: rgb(92, 195, 255);
+        display: block;
+        border-radius: 5px;
+      }
+    </style>
+</head>
+
+<body>
+
+    <!--
+    
+        Crear unha caixa de cor azul que poidamos ampliar ao doble das súas
+        dimensións ao pulsar click sobre ela.
+        Debaixo dela teremos un input text, para recoller un texto e insertalo
+        dentro desa caixa.
+
+        Podemos ter un boton insertar texto que cando se pulse colla o texto do
+        input e o meta na caixa azul.
+        */
+
+        -->
+    <div id="box"> </div>
+    <form id="formulario">
+        <input type="text" id="inputTexto" name="inputTexto">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+           $("#box").click(function (event) {
+        $("#box").css({ width: "500px", height:  "500px" });
+      });
+
+    $("#formulario").submit(function(event) {
+    event.preventDefault();
+    var texto = $("#inputTexto").val();
+    $("#box").append("<p> "+texto+" </p>");
+});
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicios Repaso</title>
+
+
+<body>
+    <div id="div01">
+    </div>
+    <span id="span01"></span>
+    <script>
+        let contador_gatos = 0;
+        function crear_gato(src) {
+            let div01 = document.querySelector("#div01");
+            let img = document.createElement("img"); // Creamos la imagen
+            img.src = src;
+            img.alt = "Santa Comba";
+            img.width = "300";
+            // A˜nadimos un id a la imagen
+            contador_gatos = contador_gatos + 1;
+            let id = "Santa comba" + String(contador_gatos);
+            img.id = id;
+            // A˜nadimos un manejador al evento click sobre la imagen
+            img.addEventListener("click", identifica_foto)
+            div01.append(img); // Metemos la imagen en el div
+        }
+
+        function identifica_foto(event) {
+            let id_foto = event.target.id;
+            let span01 = document.querySelector("#span01");
+            span01.textContent = id_foto;
+        }
+
+        crear_gato("imaxes/santacomba1.png");
+        crear_gato("imaxes/santacomba2.png");
+        crear_gato("imaxes/proba1.jpg");
+        crear_gato("imaxes/proba2.jpg");
+        crear_gato("imaxes/jesu.jpg")
+    </script>
+    <button onclick="recargarPagina()">Recargar página</button>
+    <script>
+        function recargarPagina() {
+          location.reload();
+        }
+        </script>
+</body>
+
+
+</html>

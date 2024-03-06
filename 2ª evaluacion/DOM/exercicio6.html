@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>Exercicios Repaso</title>
+
+
+<body>
+    <!--
+    Crear una paxina web que cando pulse un boton co nome 
+    "Crear parrafo" cree un parrafo co texto parrafo x.
+
+    Cun segundo boton, ao pulsar click, recorrer todos os
+    parrafos do documento e poñer en verde os parrafos 
+    impartes e en vermello os parrafos pares.
+    -->
+    <p id="texto"></p>
+    <button id="boton01">Crear párrafo</button><br>
+    <button id="boton02">Recorrer Párrafos</button>
+    <script>
+    let contador = 0; //contador de parors
+    let engadeParrafo = document.querySelector("#boton01");
+    engadeParrafo.addEventListener("click", manej_boton01);
+
+    let recorreParrafo = document.querySelector("#boton02");
+    recorreParrafo.addEventListener("click",manej_boton02);
+
+
+    function manej_boton01(){
+        let texto
+        let nuevoP = document.createElement("p");
+        
+    }
+    </script>
+</body>
+
+
+</html>

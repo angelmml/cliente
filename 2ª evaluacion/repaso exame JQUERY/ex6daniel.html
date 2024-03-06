@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.7.js"></script>
+
+    <style>
+        p {
+            display: inline;
+            width: fit-content;
+        }
+
+        #wrap{
+            display:flex;
+            height:200px;
+            width:400px;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+        #wrap-texto{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        #wrap-boton{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="wrap-texto">
+            <p id="texto1">Texto 1</p>
+            <p id="texto2">Texto 2</p>
+            <p id="texto3">Texto 3</p>
+            <p id="texto4">Texto 4</p>
+        </div>
+        <div id="wrap-boton">
+            <button id="boton">Visibilidad</button>
+        </div>
+    </div>
+    <script>
+        let opacidad = true;
+        let texto2 = document.querySelector("#texto2")
+        let texto4 = document.querySelector("#texto4")
+
+        texto2.style.opacity = 1
+        texto4.style.opacity = 1
+
+        $("#boton").click(function () {
+            
+            if(opacidad){
+                let intervalo_ocultar = setInterval(function(){
+                    texto2.style.opacity = Number(texto2.style.opacity) - 0.2
+                    texto4.style.opacity = Number(texto4.style.opacity) - 0.2
+
+                    if(texto2.style.opacity == 0 && texto4.style.opacity == 0){
+                        clearInterval(intervalo_ocultar)
+                    }
+                }, 100)
+
+                opacidad = false;
+            }else{
+                let intervalo_mostrar = setInterval(function(){
+                    texto2.style.opacity = Number(texto2.style.opacity) + 0.2
+                    texto4.style.opacity = Number(texto4.style.opacity) + 0.2
+
+                    if(texto2.style.opacity == 1 && texto4.style.opacity == 1){
+                        clearInterval(intervalo_mostrar)
+                    }
+                }, 100)
+
+                opacidad = true;
+            }
+        })
+    </script>
+</body>
+
+</html>

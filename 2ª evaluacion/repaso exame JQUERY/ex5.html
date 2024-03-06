@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios repaso 5</title>
+    <script src="js/jquery-1.7.js"></script>
+</head>
+<style>
+   
+</style>
+<body>
+    <!--
+Agora con 4 parágrafos. Ó facer clic no botón, os parágrafos pares deben desaparecer. Pero
+se volvemos a pulsar, deben aparecer de novo.
+    -->
+    <p id="parrafo1">1 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique incidunt doloremque velit exercitationem in. Laudantium, ut. Eligendi nisi sit minus minima ipsa error accusantium magni quo qui amet! Autem, voluptatum?</p>
+    <p id="parrafo2">2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nesciunt optio asperiores unde totam et, similique veritatis quae ipsam sapiente doloremque nostrum repudiandae. Eligendi sunt voluptate nemo. Pariatur, suscipit? Dolore.</p>
+    <p id="parrafo3">3 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur veniam accusantium voluptatum esse sapiente laborum doloribus aut autem hic, aliquam quam recusandae error quis, nostrum adipisci minima quidem asperiores? Recusandae?</p>
+    <p id="parrafo4">4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam magnam distinctio delectus eveniet dolorum, quasi et aut ipsum labore veritatis consequuntur at rerum dolore quibusdam maiores doloribus ea praesentium molestiae.</p>
+    <button onclick="desaparecer()">Desaparece</button>
+<script>
+    function desaparecer(){
+       $("#parrafo2, #parrafo4").toggle();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  Crea unha páxina que engada nunha lista ordenada numeros da seguinte forma
+  ao pulsar un botón "Incrementar Lista"
+  1. 1
+  2. 2
+  3. 3
+  Teremos un segundo botón que sirva para borrar elementos da lista, cada vez
+  que o pulsemos eliminará o último elemento.
+  1. 1
+  2. 2
+
+  Insertar un elemento solicitado por teclado ao usuario pulsar o botón insertar
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <button id="boton01">Incrementar lista</button>
+    <button id="boton02">Borrar ultimo elemento</button>
+    <button id="boton03">Insertar</button>
+    <ol id="listaOrdenada"></ol>
+    <script>
+        /* Tenemos un segundo botón que sirva para borrar elementos da lista, cada vez que o pulsemos,
+        eliminara o último elemento da lista
+        1. 1
+        2. 2 */
+
+
+        let contador = 1;
+        let incrementarLista = document.querySelector("#boton01");
+        incrementarLista.addEventListener("click", manej_boton01);
+
+
+        let borrarUltimaLista = document.querySelector("#boton02");
+        borrarUltimaLista.addEventListener("click", manej_boton02);
+
+        let insertarElemento = document.querySelector("#boton03");
+        insertarElemento.addEventListener("click", manej_boton03);
+
+        function manej_boton01() {
+            let nuevoElemento = document.createElement("li");
+            nuevoElemento.textContent = contador;
+            listaOrdenada.append(nuevoElemento);
+            contador++;
+        }
+
+
+        function manej_boton02() {
+            let lista = document.querySelectorAll("ol li"); // Obtener la lista
+
+
+            if (lista.length > 0) {
+                let ultimoElemento = lista[lista.length - 1]; // Obtener el último elemento
+                ultimoElemento.remove();
+                contador--;
+            }
+        }
+
+        function manej_boton03(){
+          let dato=prompt('Introduce o numero: ');
+          let novoElemento = document.createElement("li");
+          novoElemento.textContent = dato;
+          listaOrdenada.append(novoElemento);
+        }
+
+    </script>
+</body>
+
+
+</html>

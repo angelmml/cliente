@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+    /*
+    Crear un prototipo chamado almacen que conteña inicialmente:
+    Nombre.
+    Ubicación.
+    NumeroProductos.
+    Observador para os tres atributos.
+    Temos que crear un almacén cos datos "Xoguetes", "Laxe", 200
+    Imprimimos e visualizamos os datos.
+    Engadimos un novo atributo Facturaciónanual con 100000€
+    Engadimos unha función para ver a nova facturación.
+    Imprimimos todo de novo.
+    */
+   function Almacen(nombre,ubicacion,numeroProductos){
+    this.nombre = nombre;
+    this.ubicacion = ubicacion;
+    this.numeroProductos = numeroProductos;
+    this.mostrar = function(){
+        document.write(`${this.nome}/ ${this.ubicacion} / ${this.numeroProductos}`);
+    };
+   };
+   let almacen1 = new Almacen("Xoguetes","Laxe",200);
+   document.write(almacen1);
+   Almacen.prototype.FacturacionAnual = 100000;
+   almacen1.Facturacion = function (){
+    document.write(`Facturación anual: ${this.FacturacionAnual}`)}
+    
+    
+    </script>
+  </body>
+</html>

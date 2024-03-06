@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-1.7.js"></script>
+
+
+    <style>
+        #wrap-image{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+
+        #wrap-button{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+
+        .imagen{
+            width:200px;
+        }
+
+
+        .espacio-imagen{
+            width:33%;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div id="wrap-image">
+        <div class="espacio-imagen"><img src="michi.jpg" id="imagen-esquerda" class="imagen"></div>
+        <div class="espacio-imagen"><img src="michi.jpg" id="imagen-centro" class="imagen"></div>
+        <div class="espacio-imagen"><img src="michi.jpg" id="imagen-dereita" class="imagen"></div>
+    </div>
+   
+    <div id="wrap-button">
+        <button id="esquerda">Esquerda</button>
+        <button id="centro">Centro</button>
+        <button id="dereita">Dereita</button>
+    </div>
+
+
+    <script>
+        let div = document.querySelector("#wrap-image")
+
+
+        $("#esquerda").click(function(){
+            $("#imagen-esquerda").slideUp(1000)
+        })
+
+
+        $("#centro").click(function(){
+            $("#imagen-centro").slideUp(1000)
+        })
+
+
+        $("#dereita").click(function(){
+            $("#imagen-dereita").slideUp(1000)
+        })
+
+
+    </script>
+</body>
+</html>

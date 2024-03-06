@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+
+
+    <button id="boton2">CLIC</button>
+    <p id="contador2"></p>
+    <script type="text/javascript">
+        var boton2=document.getElementById('#boton2');
+        var pElement = document.querySelector('#contador2');
+        var contador2 = 10;
+        boton2.addEventListener("click", descontaContador);
+        function descontaContador() {
+            if (contador2 < 5) {
+                contador2--;
+                pElement.textContent = contador2;
+                if(contador2==0){
+                    pElement.style.color="green"
+                }
+            }
+        }
+       
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        body h2 {
+            text-align: center;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin: 10px 5px;
+        }
+
+        button {
+            display: block;
+            width: 33%;
+            padding: 10px;
+            margin: 20px 0;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .cabeceira {
+            text-align: center;
+            background-color: rgb(127, 127, 255);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+    </style>
+</head>
+<!--
+ENTRAR EN:
+https://cita.sergas.gal/citainternet/configuracion/pacientes/registroPaciente.jsf?windowId=151
+Crear o formulario existente que rexistre ao paciente si:
+Está correcto o dni.
+Está presente o primeiro apelido.
+Hay data de nacemento.
+En caso correcto, imprimir nun div os datos introducidos.
+No caso de que non esté correcto: avisar de que elemento do formulario non está
+correcto.
+MELLORA:
+Deshabilitar os campos ata que se vaian introducindo correctamente os valores
+de cada un deles. De igual forma, se todo está correcto, imprimir nun div os
+valores do formulario.  
+-->
+
+<body>
+    <div class="caixa">
+        <div class="cabeceira">
+            <h3>DATOS DE IDENTIFICACIÓN</h3>
+        </div>
+        <form id="formulario01">
+            <input type="radio" id="dni" name="docType" value="dni" checked id="dni">
+            <label for="dni">DNI/NIF/NIE</label>
+            <input type="radio" id="pasaporte" name="docType" value="pasaporte" id="pasaporte">
+            <label for="pasaporte">PASAPORTE</label>
+            <input type="text" id="numDNI" name="numDNI" placeholder="Número Documento">
+            <input type="text" id="apelido" name="apelido" placeholder="Primero Apellido" disabled>
+            <input type="date" id="data" name="data" disabled>
+            <button type="submit">Rexistrar</button>
+        </form>
+    </div>
+    <script>
+        'use strict'
+        //Funcion en la que se validan los datos de numDNI
+        function manej01(event){
+            let dni_er = /^[0-9]{8}[a-z]{1}$/i;
+            let numDNI = document.getElementById('numDNI').value;
+            if(dni_er.test(numDNI)){
+                console.log("dni ok")
+            }else{
+                console.log("dni non ok");
+            }
+        }
+
+        //Funcion para validar que está presente el segundo apellido
+
+
+        //Funcion que valida que esta presente la fecha de nacimiento
+
+        //Funcion que bloquea acceso a los campos del formulario hasta que el anterior
+    </script>
+</body>
+
+</html>

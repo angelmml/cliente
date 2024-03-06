@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+
+    </title>
+</head>
+
+<body>
+    <!--CREAR UNHA PÁXINA WEB QUE CONTEÑA DÚAS AREAS COLOREADAS
+        DE VERMELLO E AZUL.
+        CANDO COLOQUEMOS O RATO DENTRO DA ÁREA VERMELLA, NA ÁREA
+        AZUL APARECERÁ UN TEXTO DE COR BRANCO QUE POÑA,
+        RATO ENRIBA DA PRIMEIRA ÁREA E MODIFIQUE O COLOR DA PRIMEIRA
+        ÁREA VERDE-->
+
+    <!--Creamos 2 áreas coloreadas de rojo e azul-->
+    <div id="div1" style="width:50%;height:100px;float:left;background-color:#ff0000"></div>
+    <div id="div2" style="width:50%;height:100px;float:right;background-color:#000080"></div>
+    <script>
+        'use strict'
+        //Función que se ejecuta cando o ratón entra na área vermella
+        document.getElementById('div1').addEventListener("mouseover", function() {
+            document.getElementById('div1').style.backgroundColor = "green";
+            document.getElementById('div2').textContent = "ratón por encima";
+            document.getElementById('div2').style.color="white";
+            });
+
+        document.getElementById('div1').addEventListener("mouseout", function() {
+            document.getElementById('div1').style.backgroundColor = "red";
+            document.getElementById('div2').textContent = "ratón por encima";
+            document.getElementById('div2').style.color="white";
+            });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

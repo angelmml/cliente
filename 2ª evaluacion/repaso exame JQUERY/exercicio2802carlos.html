@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src="js/jquery-1.7.js"></script>
+    <title>Document</title>
+    <style>
+    img {
+        width: 300px;
+        height: 300px;
+    }
+    </style>
+</head>
+<body>  
+    <div id="contador"><h2>Inicio de contador:</h2></div>
+    <img id="reset" src="reset.webp">
+    <img id="stop" src="stop.webp">
+<script>  
+    let contador = 60;
+    let timer;
+
+
+    function actualizarContador() {
+  $("#contador").text(contador);
+  contador--;
+
+
+  if (contador >= 0) {
+   timer = setTimeout(actualizarContador, 1000);
+  }
+}
+
+
+$("#contador").click(function() {  
+    actualizarContador()
+});
+
+
+$("#reset").click(function() {
+    clearTimeout(timer);
+    contador = 60;
+  setTimeout(actualizarContador, 1000);
+  timer = null;
+});
+
+
+ 
+
+
+$("#stop").click(function() {  
+    clearTimeout(timer);
+    $("#contador").text(contador);
+    timer = null;
+});
+
+
+</script>
+
+
+   
+</body>
+</html>

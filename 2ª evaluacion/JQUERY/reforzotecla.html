@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="js/jquery-1.7.js"></script>
+</head>
+<body>
+    <div id="texto"></div>
+
+    <script>
+        document.addEventListener("keydown", function(event){
+            let div = document.querySelector("#texto")
+
+            div.textContent = `Pulsada: ${event.key} Cod.  ASCII: ${event.keyCode}`
+        })
+
+    </script>
+</body>
+</html>

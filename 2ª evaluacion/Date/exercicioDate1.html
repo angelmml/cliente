@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+  </head>
+  <body>
+    <script>
+     /*
+        Facendo uso del objeto date, crea un objeto usuario que contenga
+        como atributo el nombre de usuario, y un método que se llama a iniciarsesion
+        que imprima un saludo al usuario en la siguiete forma:
+        Hola, usuario. Hoy es {fecha de hoy en String}
+     */
+    var user = {
+        name : "Paco",
+        startSession : function(){
+            var hoxe = new Date();
+            var dia = String(today.getDate()); 
+            var mes = String(today.getMonth()); 
+            var ano = today.getFullYear();
+            console.log("Hola, "+ this.name+". Hoy es "+dia+"/"+mes+"/"+ano);
+            }
+            };
+            user.startSession();
+
+    </script>
+  </body>
+</html>

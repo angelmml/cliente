@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios repaso 5</title>
+    <script src="js/jquery-1.7.js"></script>
+</head>
+<style>
+   
+</style>
+<body>
+    <!--
+    O mesmo que o anterior pero, ó facer clic no botón, o primeiro e o último parágrafo deben
+    desaparecer (os dous). Pero se volvemos a pulsar, deben aparecer de novo (os dous).
+    -->
+    <p id="parrafo1">1Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique incidunt doloremque velit exercitationem in. 
+        Laudantium, ut. Eligendi nisi sit minus minima ipsa error accusantium magni quo qui amet! Autem, voluptatum?</p>
+    <p id="parrafo1">2Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias nesciunt optio asperiores unde totam et, similique
+        veritatis quae ipsam sapiente doloremque nostrum repudiandae. Eligendi sunt voluptate nemo. Pariatur, suscipit? Dolore.</p>
+    <button onclick="desaparecer()">Desaparece</button>
+<script>
+    function desaparecer(){
+       $("#parrafo1, #parrafo2").toggle();
+    }
+</script>
+</body>
+</html>

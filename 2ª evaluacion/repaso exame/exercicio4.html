@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-1.7.js"></script>
+    <!--
+    DATAS:
+    Crea una página que reciba una fecha en un input e indique
+    cuanto tiempo falta para cambiar de siglo desde esa fecha. 
+    Ejemplo: 1930 2000-1930
+    2000 2100-2200
+    -->
+</head>
+<body>
+    <input type="date"></input><br/>
+    <script>
+        $(document).ready(function(){
+            $("input[type='date']").change(function(){
+                let date = new Date($(this).val());
+                let year = date.getFullYear();
+                //Cálculo del año actual
+                let currentDate = new Date();
+                
+    </script>
+        
+</body>
+</html>

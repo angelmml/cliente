@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+    Usando prototipos
+    Aplanar matriz: implementa una función que aplana un matriz multidimensional
+    en un único nivel.
+    */
+
+      Array.prototype.aplanar = function () {
+        let resultado = [];
+        for (let i = 0; i < this.length; i++) {
+          const elemento = this[i];
+          if (Array.isArray(elemento)) {
+            resultado = resultado.concat(elemento.aplanar());
+          } else {
+            resultado.push(elemento);
+          }
+        }
+        return resultado;
+      };
+
+      const matrizMultidimensional = [1, [2, 3], [4, [5, 6]]];
+      const matrizAplanada = matrizMultidimensional.aplanar();
+      console.log(matrizAplanada);
+    </script>
+  </body>
+</html>

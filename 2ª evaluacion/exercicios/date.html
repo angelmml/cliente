@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercicio repaso</title>
+  </head>
+
+  <body>
+    <script>
+      /*
+        Utilizando o objeto DATE solicita a data de nacemento
+        por teclado e calcula o numero de dias que pasaron
+        dende a data de nacemento solicitada a data actual.
+        */
+
+      function dias_totales() {
+        //Pedir ao usuario por pantalla a fecha nacemento usando o objeto DATE
+        var nacemento = new Date(prompt("Introduce a data de nacemento:"));
+        //Obtener a data actual
+        var hoxe = new Date();
+        //Calcular os días entre a data de nacemento e a data actual pasando os milisegundos
+        var diferencia = hoxe - nacemento;
+        //calcular os días transcurridos (diferencia/1000)
+        var dias_totales = Math.floor(diferencia / (1000 * 60 * 60 * 24)); //os milisegundos nun dia son 1000*60*60=3600
+        //Mostrar o resultado na páxina web
+        return dias_totales;
+      }
+
+      document.write(
+        "<h1>Os días que se pasaron desde o teu nacento ata agora son " +
+          dias_totales +
+          "</h1>"
+      );
+
+      console.log(nacemento);
+
+      console.log(hoxe);
+    </script>
+  </body>
+</html>

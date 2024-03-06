@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src="js/jquery-1.7.js"></script>
+    <title>sen libreria non vai</title>
+</head>
+<body>  
+<img id="img" src="e.jpg">  
+<button id="dereita">dereita</button>
+<button id="esquerda">esquerda</button>
+<button id="centro">centro</button>
+
+
+<script>
+
+
+    $("#dereita").click(function() {
+        $("#img").css({"float":"right"})
+    } )
+    $("#esquerda").click(function() {
+        $("#img").css({"float":"left"})
+    } )
+    $("#centro").click(function() {
+        $("#img").css({"padding-left": "40%"})
+    })
+</script>
+</body>
+</html>
