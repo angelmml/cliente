@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Uso de prototipos: dias transcurridos
+        Implementa una función que calcule cuantos dias pasaron entre 2 fechas.
+        */
+      
+      let fecha1 = new Date(2022, 8, 22); // 22 de septiembre de 2022
+      let fecha2 = new Date(2023, 8, 22); // 22 de septiembre de 2023
+
+      Date.prototype.diasEntreFechas = function (fechaInicio, fechaFin) {
+        let diferencia = fechaFin - fechaInicio;
+
+        let dias = diferencia / (1000 * 3600 * 24);
+
+        return Math.round(dias);
+      };
+
+      let diferencia = new Date();
+      console.log(diferencia.diasEntreFechas(fecha1, fecha2));
+    </script>
+  </body>
+</html>
