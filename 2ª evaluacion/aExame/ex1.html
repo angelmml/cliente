@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 1</title>
+
+    <!--Engadimos a libreria de jquery-->
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+  </head>
+  <body>
+    <script>
+      /*
+        Dado o parágrafo que che mostramos a continuación. 
+        “A informática cuántica é unha disciplina de ciencia da computación que
+        se ocupa de desenvolver algoritmos, computadores e dispositivos para 
+        traballar con bits cuánticos. Esta tecnoloxía promete ás súas usuarias unha
+        potencia informática sen precedentes, que poderían cambiar o xeito no que o 
+        mundo trata coa información”. 
+        Cando pulses sobre el debe cambiar a cor de fondo a vermello e a cor da letra
+        a branca. Aos dez segundos debe cambiar ao seu estado por defecto.
+        */
+    </script>
+
+    <!--Párrafo co id que será usado por JS-->
+    <p id="mensaje">
+      A informática cuántica é unha disciplina de ciencia da computación que se
+      ocupa de desenvolver algoritmos, computadores e dispositivos para
+      traballar con bits cuánticos. Esta tecnoloxía promete ás súas usuarias
+      unha potencia informática sen precedentes, que poderían cambiar o xeito no
+      que o mundo trata coa información
+    </p>
+
+    <script>
+      //Engadimos o id e facemos que ao facer click entre en funcionamento o seguinte código
+      $("#mensaje").click(function () {
+        //Cambiamos o fondo a vermello
+        $(this).css("background-color", "red");
+        //Cambiamos a cor da letra a blanco
+        $(this).css("color", "white");
+
+        //Creamos un timeout para que ao pasaren os 10 segundos (10000 milisegundos) o texto volva ao valor anterior
+        setTimeout(function () {
+          $("#mensaje").css("background-color", "white");
+          $("#mensaje").css("color", "black");
+        }, 10000);
+      });
+    </script>
+  </body>
+</html>

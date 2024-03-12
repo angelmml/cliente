@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+
+<body>
+    <!--
+        Elaborar un programa que nun input reciba un número entre 1 e 10.
+        Se non está entre o 1 e o 10, lanzamos un error de tipo Error coa mensaxe
+        "O número non é o 1 ao 10". No catch debe lanzar por consola e mensaxe.
+    -->
+
+    <!--Creamos el input-->
+    
+    <input type="number" id="numero" placeholder="Introduce un numero entre
+    1 e 10" />
+    <button onclick="verificar()">Enviar</button>
+    <script>
+        document.querySelector('button').onclick = () => {
+            try {
+                const numero = document.querySelector('#numero').value;
+                if (numero < 1 || numero > 10) {
+                    throw "o numero non e do 1 ao 10";
+                }
+               console.log('O número está dentro do rango permitido.');
+            } catch (error) {
+                console.log(error);
+               
+            }
+        };
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+    <style>
+        img{
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Crea un listado de webs dinámico e de interese para o usuario. 
+    O que se pretende é que un input recolla unha páxina web. Ao darlle ao
+    botón inserir (non será un botón ao uso, será a imaxe facilitada neste 
+    exame co nome boton.jpg) validará se é unha url, e no caso de que sexa, esta 
+    pasará a un div con fondo verde e letras brancas pero, só pasará o nome do dominio.
+    Se a url non é válida, non pasa ao div e avisarase cunha mensaxe que sairá debaixo 
+    do input ao usuario mediante un fadeIn. 
+    Exemplo: http://www.corme.net-------------- pasa ao div como corme.net (foi validada como url).
+    -->
+    <div id="global">
+    <input type="text" id="paxina">
+    
+      <div id='botonWeb'>
+        <img src="imaxes/boton.JPG" alt="iconoBoton">
+    </div>
+    
+    <div id="resultado"></div>
+    <div id="resultadoNeg"></div>  
+    </div>
+    </div>
+
+<script>
+    $("#botonWeb").click(function () {
+        let erObjeto1=/^(http(s)?:\/\/)+([w]{3}[\.])+[a-z0-9]+[\.][a-z]{2,3}$/;
+        let paxina = document.querySelector("#paxina");
+
+        if (erObjeto1.test(paxina)) {
+  
+            $("#global").css("background-color", "red");
+            $("#resultado").text("Web  non válida");
+            } else {
+    
+                $("#global").css("background-color", "green").fadeIn('slow');;
+                $("#resultado").text("Web válida").fadeIn('slow');;
+            }
+    });
+</script>
+</body>
+</html>

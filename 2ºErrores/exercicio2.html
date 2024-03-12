@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-1.7.js"></script>
+</head>
+<body>
+    <!--
+        Escribe un programa que compruebe el valor de una variable numérica entera
+        llamada nota y lance un error si su valor no se encuentra entre 0 y 10.
+    -->
+
+    <script>
+
+        function compruebaNota(n){
+            if(n<0 || n>10){
+                throw new RangeError("Valor incorrecto para la nota.");
+            }
+        }
+        try{
+            compruebaNota(12);
+        }catch (error){
+            if(error instanceof RangeError){
+                console.log(`${error.name}: ${error.message}`);
+                console.log("Por favor, vuelve a introducir un valor para la nota.");
+            }
+        }
+    </script>
+</body>
+</html>
