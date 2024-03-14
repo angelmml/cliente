@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3</title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+</head>
+<body>
+    <!--
+        Utilizando patróns modifica o obxecto String para que poida comprobar
+        se un obxecto cadea contén ou non números no seu interior.
+    -->
+
+    <script>
+
+        String.prototype.tenNumeros = function(){
+            let numeros = (/^[0-9]/);
+            numeros.test(this);
+            return;
+        };
+
+        var frase1  = "Mira como baila";
+        var frase2 = "Como trenta y tres";
+
+        if (regex.test(tenNumeros)) {
+                return "Ten números.";
+            } else {
+                return "Non ten números.";
+            }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+</head>
+<body>
+    <!--
+    Fai un programa que cada 10 segundos cargue unha imaxe das 20 que temos na carpeta “imaxes4”,
+    na aula virtual. Cando cargue as 10 imaxes, deixará de actuar o intervalo. Fai que as imaxes
+    aparezan cun fadeIn ou animate, co mesmo tamaño, e ben aliñadas, de forma que aparezan cinco
+    nunha liña e cinco na seguinte.
+
+    -->
+    <div id="imaxes">
+        <img id="imaxe1" src="imaxes/1.jpeg" alt="imaxe1">
+        <img id="imaxe2" src="imaxes/2.jpeg" alt="imaxe2">
+        <img id="imaxe3" src="imaxes/3.jpeg" alt="imaxe2">
+        <img id="imaxe4" src="imaxes/4.jpeg" alt="imaxe2">
+        <img id="imaxe5" src="imaxes/5.jpeg" alt="imaxe2">
+        <img id="imaxe6" src="imaxes/6.jpeg" alt="imaxe2">
+        <img id="imaxe7" src="imaxes/7.jpeg" alt="imaxe2">
+        <img id="imaxe8" src="imaxes/8.jpeg" alt="imaxe2">
+        <img id="imaxe9" src="imaxes/9.jpeg" alt="imaxe9">
+        <img id="imaxe10" src="imaxes/10.jpeg" alt="imaxe10">
+    </div>
+    <script>
+        $("#imaxes").css({"hidden": "true", "display":"none"});
+        setTimeout(function(){
+            $("#$imaxe1").css({"hidden": "false", "display":"top"})
+        }, 10000);
+    
+            </script>
+</body>
+</html>

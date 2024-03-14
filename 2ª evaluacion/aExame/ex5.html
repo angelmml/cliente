@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5</title>
+    <script type="text/javascript" src="js/jquery-1.7.js"></script>
+</head>
+<body>
+    <!--
+    Define un obxecto JSON para que se almacene unha aula do centro cos
+    seguintes datos:
+    Nome: Radio.
+    Ubicación: 1º Planta. 
+    Ocupada: True
+    Data de fin de ocupación: 09-03-2024
+    • Define o obxecto no formato JSON estándar. 
+    • Converte este obxecto nun obxecto Object de Javascript.
+    • Xera un Array con este tipo de obxecto creado e carga cun bucle For, e carga no array 2 
+    aulas máis.
+    • Finalmente, imprime o seu contido.
+    -->
+
+    <script>
+        //Creamos o objeto json
+        var aula = '{"nome":"Radio", "ubicacion":"1ª Planta", "ocupada":"true", "data":"09-03-2024"}';
+
+        //Paso de json a obxeto
+        var aul = JSON.parse(aula);
+
+        //Función que creamos para engadir os datos
+        aul.engadirDatos = function (nome, ubicacion, ocupada, data) {
+            this.nome = nome;
+            this.ubicacion = ubicacion;
+            this.ocupada = ocupada;
+            this.data = data;
+        }  
+
+        //Función coa que veremos a información
+        aul.verInfo = function (){
+            document.write(this.nome + "<br>");
+            document.write(this.ubicacion + "<br>");
+            document.write(this.ocupada + "<br>");
+            document.write(this.data + "<br>")
+        }
+
+        aul.verInfo();
+
+        //Xeneramos o array ao que engadiremos 2 aulas máis
+        var aulas = [];
+
+        //Creamos os ous obxetos cun for e solicitamos ao usuario meta os datos
+        for (var i = 0; i < 2; i++){
+            var novaAula = Object.create(aul);
+            nome = prompt("Nome da aula:");
+            ubicacion = prompt("Ubicación da aula:");
+            ocupada = prompt("Atopase ocupada?");
+            data = prompt("Data fin ocupacion:");
+            novaAula.engadirDatos(nome, ubicacion, ocupada, data);
+            aulas.push(novaAula);
+        }
+
+        //Sacamos a iformacion dos dous obxetos que creamos
+        for (var i = 0; i < 2; i++){
+            document.write("Aula: " + (i + 1) + "<br>" + "<br>");
+            aulas[i].verInfo();
+        }
+
+
+    </script>
+</body>
+</html>

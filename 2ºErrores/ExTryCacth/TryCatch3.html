@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Define unha función que toma unha matriz e un índice como argumentos e devolve
+        elemento nese índice. Xestiona calquera erro que poida occorer se o índice está
+        fóra do intervalo da matriz. (erro de intervalos).
+        */
+
+      //Creamos a función flecha
+      const matriz = (matrix, indice) => {
+        try {
+          //Facemos a comprobación pa ver se o indice ta dentro dos rango do array
+          if (indice >= 0 && indice < matrix.length) {
+            //Devolvemos o elemento do indice
+            return matrix[indice];
+          } else {
+            //Se non, lanzamos este error.
+            throw new RangeError("Fóra de rango you");
+          }
+        } catch (error) {
+          //Devolvemos a mensaxe de error
+          return error.message;
+        }finally{
+            console.log("Eu aparezco si ou si");
+        }
+
+      };
+
+      // Creamos o array
+      const matrix = ["Bosque", 8, 15, "Cartón", 23, "Xaguar"];
+      //Buscamos o indice
+      const indice = -5;
+
+      //Comprobamos
+      const result = matriz(matrix, indice);
+      //Devolvemos
+      console.log(result);
+    </script>
+  </body>
+</html>
