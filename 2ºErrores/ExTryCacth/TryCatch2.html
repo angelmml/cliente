@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Crea unha función que converta unha cadea en número. Xestiona calquera
+        erro que poida ocorrer durante a conversion. (erro xenérico).
+        */
+
+        const cadena = (cad1) => {
+            try {
+                if (cad1){
+                    const numero = Number(cad1);
+                    if (isNaN(numero)){
+                        throw new Error ("Non é un número valido")
+                    }
+                    return numero;
+                }else {
+                    throw new Error("Cadena non existente")
+                }
+            }
+            catch (error){
+                return error.message;
+            }
+        };
+
+        const cad1 = "33";
+        const resultado1 = cadena(cad1);
+        console.log(resultado1);
+
+    </script>
+</body>
+</html>
