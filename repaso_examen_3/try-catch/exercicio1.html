@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    try{
+    let numero = parseInt(prompt("Introduce un número:"));
+    if (numero < 0){
+        throw new Error("Mete os datos ben");
+    }
+    }catch (error){
+        console.log("Mete ben o numero", error.message);
+    }finally{
+        console.log("Programa executado.");
+    }
+    </script>
+</body>
+</html>

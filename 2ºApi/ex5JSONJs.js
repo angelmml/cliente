@@ -1,13 +1,12 @@
 window.onload = function() {
-    var marca = prompt("Introduce a marca");
-    var modelo = prompt("Introduce o modelo");
-    var num_bast = prompt("Introduce o número de bastidor");
-    var cilindrada = prompt("Introduce a cilindrada");
-    var portas = prompt("Cantas portas ten?");
-    var color = prompt("Introduce o color do coche");
-    var nome = prompt("Introduce o nombre do propietario:");
-    var apelidos = prompt("Introduce os apelidos do propietario:");
-
+    var marca = prompt("Introduce la marca");
+    var modelo = prompt("Introduce el modelo");
+    var num_bast = prompt("Introduce el número de bastidor");
+    var cilindrada = prompt("Introduce la cilindrada");
+    var portas = prompt("¿Cuantas puertas tiene?");
+    var color = prompt("Introduce el color del coche");
+    var nome = prompt("Introduce el nombre del propietario:");
+    var apelidos = prompt("Introduce los apellidos del propietario:");
 
     var dato = {
         marca: marca,
@@ -27,7 +26,7 @@ window.onload = function() {
     var datoRecuperadoJSON = localStorage.getItem('dato');
     var datoRecuperado = JSON.parse(datoRecuperadoJSON);
 
-    // Mostrar los datos en formato HTML
+    // Mostra os datos en formato HTML
     document.body.innerHTML = `
         <h2>Información del vehículo:</h2>
         <p><strong>Marca:</strong> ${datoRecuperado.marca}</p>
@@ -36,8 +35,11 @@ window.onload = function() {
         <p><strong>Cilindrada:</strong> ${datoRecuperado.cilindrada}</p>
         <p><strong>Número de puertas:</strong> ${datoRecuperado.portas}</p>
         <p><strong>Color:</strong> ${datoRecuperado.color}</p>
-        <p><strong>Nome:</strong> ${datoRecuperado.nome}</p>
-        <p><strong>Apelidos:</strong> ${datoRecuperado.apelido}</p>
-        
+        <p><strong>Nombre:</strong> ${datoRecuperado.nome}</p>
+        <p><strong>Apellidos:</strong> ${datoRecuperado.apelidos}</p>
     `;
+
+    
+    console.log(datoRecuperado);
+    localStorage.removeItem('dato');
 }
