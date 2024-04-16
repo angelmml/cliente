@@ -1,45 +1,27 @@
-window.onload = function() {
-    var marca = prompt("Introduce la marca");
-    var modelo = prompt("Introduce el modelo");
-    var num_bast = prompt("Introduce el número de bastidor");
-    var cilindrada = prompt("Introduce la cilindrada");
-    var portas = prompt("¿Cuantas puertas tiene?");
-    var color = prompt("Introduce el color del coche");
-    var nome = prompt("Introduce el nombre del propietario:");
-    var apelidos = prompt("Introduce los apellidos del propietario:");
+var vehiculoInfo = {
+    marca: "Toyota",
+    modelo: "Corolla",
+    numBastidor: "123456789",
+    cilindrada: "2000cc",
+    numPuertas: "4",
+    color: "Rojo",
+    nombre: "Juan",
+    apellido: "Pérez",
+    direccion: "Calle 123",
+    telefono: "123456789",
+    email: "juan@example.com"
+};
 
-    var dato = {
-        marca: marca,
-        modelo: modelo,
-        num_bast: num_bast,
-        cilindrada: cilindrada,
-        portas: portas,
-        color: color,
-        nome: nome,
-        apelidos: apelidos
-    };
 
-    var datoJSON = JSON.stringify(dato);
+localStorage.setItem('vehiculoInfo', JSON.stringify(vehiculoInfo));
 
-    localStorage.setItem('dato', datoJSON);
 
-    var datoRecuperadoJSON = localStorage.getItem('dato');
-    var datoRecuperado = JSON.parse(datoRecuperadoJSON);
+const vehiculoGuardado = JSON.parse(localStorage.getItem('vehiculoInfo'));
 
-    // Mostra os datos en formato HTML
-    document.body.innerHTML = `
-        <h2>Información del vehículo:</h2>
-        <p><strong>Marca:</strong> ${datoRecuperado.marca}</p>
-        <p><strong>Modelo:</strong> ${datoRecuperado.modelo}</p>
-        <p><strong>Número de bastidor:</strong> ${datoRecuperado.num_bast}</p>
-        <p><strong>Cilindrada:</strong> ${datoRecuperado.cilindrada}</p>
-        <p><strong>Número de puertas:</strong> ${datoRecuperado.portas}</p>
-        <p><strong>Color:</strong> ${datoRecuperado.color}</p>
-        <p><strong>Nombre:</strong> ${datoRecuperado.nome}</p>
-        <p><strong>Apellidos:</strong> ${datoRecuperado.apelidos}</p>
-    `;
 
-    
-    console.log(datoRecuperado);
-    localStorage.removeItem('dato');
-}
+for (const propiedad in vehiculoGuardado) {
+    document.write(`${propiedad}: ${vehiculoGuardado[propiedad]} <br>`);
+};
+
+//esto é uin ejemplo de acceder a unha variable do objeto
+document.write(vehiculoGuardado.marca);
