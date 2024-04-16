@@ -15,11 +15,24 @@
 
 
 <script>
+let fechaActual = new Date();
+let sacarHora = fechaActual; // No necesitas usar getTime(), ya que fechaActual es un objeto Date válido
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
+
+// Dibujar el círculo lleno (coloreado)
 ctx.beginPath();
-ctx.arc(95,50,40,0,2*Math.PI);
-ctx.stroke();
+ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "green"; // Establecer el color de relleno
+ctx.fill();
+
+// Dibujar el texto de la fecha
+ctx.font = "10px Arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+ctx.fillText(sacarHora.toLocaleString(), 95, 50); // Aquí puedes utilizar directamente sacarHora
+
+
 </script> 
 
 </body>
