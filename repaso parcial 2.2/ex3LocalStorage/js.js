@@ -1,13 +1,10 @@
-let fechaActual = new Date().toString();
-
-let nomeUsuario = prompt("Escribe o teu nome:");
-
-if (nomeUsuario){
-    localStorage.setItem(nomeUsuario, fechaActual);
-    console.log("Informacion gardada en LocalStorge:");
-    console.log("Nome:", nomeUsuario);
-    console.log("Fecha do sistema: ", fechaActual);
-}else{
-    console.log("Non se metiu un nombre. Non se garda en LocalStorgare.");
-}
-
+const guardarFecha = () => {
+    const nombre = prompt("Por favor, introduce teu nome:");
+    if (nombre) {
+        const fechaActual = new Date().toLocaleDateString('es-ES');
+        localStorage.setItem(nombre, fechaActual);
+        document.write(localStorage.getItem(nombre));
+    } else {
+        document.write("Non se proporcionóu un nome.<br>");
+    }
+};
