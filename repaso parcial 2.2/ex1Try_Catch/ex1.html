@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+        Crea un try catch que canalice o erro se, unha vez creo un obxecto javascript persoa que ten
+        as propiedades nome e apelidos, intento acceder a idade (que non definimos no obxecto).
+        En todo caso debe mandar unha mensaxe que tentou acceder á propiedade.
+        */      
+       let persona = {
+                nome: "Pepe",
+                /*apelido: "Pepito"*/
+       }
+        try{
+                let proba = persona.apelido;
+                throw new Error("Mete os datos necesarios, falta idade que non está definida");
+            
+        }catch(error){
+            console.log("Error na lectura de dato", error.message);
+        }finally{
+            console.log("Intentouse acceder a propiedade.")
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!--Define unha función que toma unha matriz e un índice como argumentos e devolve o
+elemento nese índice. Xestiona calquera erro que poida ocorrer se o índice está fóra do
+intervalo da matriz. (erro de intervalos).-->
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercicio3</title>
+</head>
+
+
+<body>
+    <script>
+        const obtenerElemento = (matriz, indice) => {
+            try {
+                if (indice < 0 || indice >= matriz.length) {
+                    throw new Error('O índice está fora do intervalo da matriz');
+                } else {
+                    return matriz[indice];
+                }
+            } catch (error) {
+               
+                return error.message;
+         }finally{
+            document.write("intentouse acceder <br> ")
+         }
+        }
+
+
+        // Ejemplo de uso:
+        const matriz = [10, 20, 30, 40, 50];
+        document.write(obtenerElemento(matriz, 12)+"<br>");
+        document.write(obtenerElemento(matriz, 3));
+
+
+    </script>
+</body>
+
+
+</html>

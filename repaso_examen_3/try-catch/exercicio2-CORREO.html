@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/jquery-1.7.js"></script>
+</head>
+<body>
+    <input type="text" id="correo">
+    <button type="button" id="boton">Validar</button>
+    <!-- Agrega un div para mostrar el resultado -->
+    <div id="resultado"></div>
+    <script>
+        // Espera a que el documento esté completamente cargado
+        $("#boton").click(function() {
+    try {
+        let erObjeto1 = /^[a-z0-9_.]+@[a-z0-9.]+\.[a-z]{2,4}$/i;
+        let correo = $("#correo").val(); // Obtén el valor del input usando jQuery
+        if (!erObjeto1.test(correo)) {
+            throw new Error("Correo electrónico inválido");
+        }
+        // Si el correo es válido, continúa con el código aquí
+        $("#resultado").text("Correo electrónico válido");
+    } catch (error) {
+        // Captura el error y accede a su mensaje
+        console.log("Error:", error.message);
+        // También puedes acceder al tipo de error utilizando error.constructor.name
+        console.log("Tipo de error:", error.constructor.name);
+    } finally {
+        // Este bloque siempre se ejecutará
+        console.log("Programa ejecutado, correo electrónico comprobado");
+    }
+});
+
+    </script>
+</body>
+</html>
