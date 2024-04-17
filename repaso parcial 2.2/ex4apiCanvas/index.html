@@ -8,10 +8,41 @@
     <script type="text/javascript" src="js.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
     <canvas id="myCanvas" width="200" height="100" style="border:5px solid #000000;">
     YOUU</canvas>
 </body>
 </html>
+=======
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+</body>
+</html>
+
+
+
+<script>
+let fechaActual = new Date();
+let sacarHora = fechaActual; // No necesitas usar getTime(), ya que fechaActual es un objeto Date válido
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Dibujar el círculo lleno (coloreado)
+ctx.beginPath();
+ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+ctx.fillStyle = "green"; // Establecer el color de relleno
+ctx.fill();
+
+// Dibujar el texto de la fecha
+ctx.font = "10px Arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+ctx.fillText(sacarHora.toLocaleString(), 95, 50); // Aquí puedes utilizar directamente sacarHora
+
+
+</script> 
+
+>>>>>>> 9cf7ce8d91b82480f242b99df88c32b8e5cede8f
 </body>
 </html>
 
